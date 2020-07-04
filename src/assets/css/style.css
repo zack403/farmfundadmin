@@ -79,7 +79,7 @@ body {
 	outline: none;
 }
 a {
-	color: #5458b3;
+	color: greenyellow;
 	font-weight: 400;
 }
 a:hover {
@@ -255,7 +255,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .ion, a:not(.btn-social
 	color: #484c67 !important;
 }
 .text-primary {
-	color: #5458b3 !important;
+	color: greenyellow !important;
 }
 .text-secondary {
 	color: #b03cd5 !important;
@@ -569,7 +569,7 @@ body.sidebar-gone .main-content {
 	color: #fff;
 	text-align: center;
 	white-space: nowrap;
-	background-color: #5458b3;
+	background-color: greenyellow;
 	transition: width .6s ease;
 }
 .progress-bar-striped {
@@ -926,7 +926,7 @@ body.sidebar-gone .main-content {
 	color: #6c739f;
 }
 .profile-head h6 {
-	color: #5458b3;
+	color: greenyellow;
 }
 .profile-edit-btn {
 	border: none;
@@ -944,7 +944,7 @@ body.sidebar-gone .main-content {
 	margin-top: 5%;
 }
 .proile-rating span {
-	color: #5458b3;
+	color: greenyellow;
 	font-size: 15px;
 	font-weight: 600;
 }
@@ -957,7 +957,7 @@ body.sidebar-gone .main-content {
 }
 .profile-head .nav-tabs .nav-link.active {
 	border: none;
-	border-bottom: 2px solid #5458b3;
+	border-bottom: 2px solid greenyellow;
 }
 .profile-work {
 	padding: 14%;
@@ -977,7 +977,7 @@ body.sidebar-gone .main-content {
 }
 .profile-work a:hover {
 	text-decoration: underline;
-	color: #5458b3;
+	color: greenyellow;
 }
 .profile-work ul {
 	list-style: none;
@@ -987,7 +987,7 @@ body.sidebar-gone .main-content {
 }
 .profile-tab p {
 	font-weight: 600;
-	color: #5458b3;
+	color: greenyellow;
 }
 @media (max-width:320px){
 	form .files input {
@@ -1096,11 +1096,11 @@ body.sidebar-gone .main-content {
 	border-bottom-right-radius: 3px;
 }
 .page-item .page-link {
-	color: #5458b3;
+	color: greenyellow;
 }
 .page-item.active .page-link {
-	background-color: #5458b3;
-	border-color: #5458b3;
+	background-color: greenyellow;
+	border-color: greenyellow;
 }
 .page-item.disabled .page-link, .page-link {
 	border-color: #ececff;
@@ -1567,7 +1567,7 @@ div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-chil
 .dropdown-item {
 	padding: 10px 20px;
 	line-height: 1.2;
-	color: #777ab2;
+	color: green;
 }
 .dropdown-divider {
 	background-color: #ececff;
@@ -1591,7 +1591,7 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	font-size:16px;
 }
 .dropdown-item.has-icon:hover{
-	background:linear-gradient(#3d4192, green) !important;
+	background:linear-gradient(green, greenyellow) !important;
 	color:#fff;
 }
 .dropdown-list .dropdown-item.dropdown-item-unread:active .dropdown-item-desc, .dropdown-list .dropdown-item.dropdown-item-unread:active .dropdown-item-desc b {
@@ -1902,30 +1902,30 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	color: #fff;
 }
 .btn-primary {
-	background-color: #5458b3;
-	border-color: #5458b3;
+	background-color: green;
+	border-color: greenyellow;
 }
 .btn-primary:focus, .btn-primary:focus:active, .btn-primary:active, .btn-primary:hover {
-	background-color: #4c51b1 !important;
+	background-color: greenyellow !important;
 }
 .btn-primary.disabled, .btn-primary:disabled {
 	color: #fff;
-	background-color: #4c51b1;
-	border-color: #4c51b1;
+	background-color: green;
+	border-color: greenyellow;
 }
 .btn-outline-primary {
-	color: #5458b3;
+	color: greenyellow;
 	background-color: transparent;
 	background-image: none;
-	border-color: #5458b3;
+	border-color: greenyellow;
 }
 .btn-outline-primary:hover {
 	background: green;
 }
 .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
 	color: #fff;
-	background-color: #5458b3;
-	border-color: #5458b3;
+	background-color: greenyellow;
+	border-color: greenyellow;
 }
 .btn-danger {
 	color: #fff;
@@ -1961,7 +1961,7 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	background-color: #1abeff !important;
 }
 .btn-group .btn.active {
-	background-color: #5458b3;
+	background-color: greenyellow;
 	color: #fff;
 }
 .btn-facebook{
@@ -1992,7 +1992,7 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	box-shadow:0 2px 17px 2px rgb(222, 223, 241) ;
 }
 .navbar.active {
-	background-color: #5458b3;
+	background-color: greenyellow;
 }
 .navbar .form-inline .form-control {
 	border-radius: 0px;
@@ -2006,11 +2006,11 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 .navbar .form-inline .btn {
 	border-radius: 0;
 	padding: 5px 15px 6px 15px;
-	border: 2px solid #5458b3;
+	border: 2px solid yellowgreen;
 	box-shadow:none;
 }
 .navbar .nav-link {
-	color: #5458b3;
+	color: green;
 	padding-left: 10px !important;
 	padding-right: 10px !important;
 }
@@ -2040,14 +2040,14 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	display: none;
 }
 .navbar .nav-link:hover {
-	color: #aab2db;
+	color: greenyellow;
 }
 .navbar .nav-link.disabled {
 	color: #fff;
 	opacity: .6;
 }
 .nav-tabs .nav-item .nav-link {
-	color: #5458b3;
+	color: greenyellow;
 }
 .nav-tabs .nav-item .nav-link.active {
 	color: #777ab2;
@@ -2070,14 +2070,14 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	margin-top: -1px;
 }
 .nav-pills .nav-item .nav-link {
-	color: #5458b3;
+	color: greenyellow;
 	border-radius: 30px;
 	padding-left: 15px !important;
 	padding-right: 15px !important;
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link, .nav-pills .nav-item .nav-link.active {
 	color: #fff;
-	background: #5458b3;
+	background: greenyellow;
 }
 .nav-pills .nav-item .nav-link .badge {
 	padding: 5px 8px;
@@ -2130,7 +2130,7 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	color: #777ab2;
 }
 .form-control:focus {
-	border-color: #5458b3;
+	border-color: greenyellow;
 }
 .input-group-text, select.form-control:not([size]):not([multiple]), .form-control:not(.form-control-sm):not(.form-control-lg) {
 	font-size: 14px;
@@ -2204,7 +2204,7 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	color: #fff;
 }
 .alert.alert-primary {
-	background-color: #5458b3;
+	background-color: greenyellow;
 }
 .alert.alert-secondary {
 	background-color: #b03cd5;
@@ -2269,7 +2269,7 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	padding: 5px 13px;
 }
 .card.card-primary {
-	border-top: 2px solid #5458b3;
+	border-top: 2px solid greenyellow;
 }
 .card.card-secondary {
 	border-top: 2px solid #b03cd5;
@@ -2831,7 +2831,7 @@ tr:first-child>td>.fc-day-grid-event {
 	border-radius: 0;
 }
 .fc button.fc-state-active {
-	background-color: #5458b3;
+	background-color: greenyellow;
 	color: #fff;
 }
 /*-- min Calendar ---*/
@@ -2908,7 +2908,7 @@ tr:first-child>td>.fc-day-grid-event {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	background-color: #5458b3;
+	background-color: greenyellow;
 	border: 1px solid #000;
 	border-radius: 50%;
 }
@@ -2957,10 +2957,10 @@ tr:first-child>td>.fc-day-grid-event {
 	margin-right: 10px;
 	padding: 5px 13px;
 	border-radius: 3px;
-	border: 2px solid #5458b3;
+	border: 2px solid greenyellow;
 	font-size: 10px;
 	font-weight: 500;
-	color: #5458b3;
+	color: greenyellow;
 	text-transform: uppercase;
 	letter-spacing: 0;
 	margin-bottom: 10px;
@@ -3439,7 +3439,7 @@ tr:first-child>td>.fc-day-grid-event {
 }
 .card-chat .chat-content .chat-item.chat-right .chat-details .chat-text {
 	text-align: left;
-	background-color: #5458b3;
+	background-color: greenyellow;
 	color: #fff;
 }
 .card-chat .chat-content .chat-item {
@@ -3648,8 +3648,8 @@ tr:first-child>td>.fc-day-grid-event {
 .list-group-item.active {
 	z-index: 2;
 	color: #fff;
-	background-color: #5458b3;
-	border-color: #5458b3;
+	background-color: greenyellow;
+	border-color: greenyellow;
 }
 /*-- Badge --*/
 
@@ -3662,7 +3662,7 @@ tr:first-child>td>.fc-day-grid-event {
 }
 .badge-primary {
 	color: #fff;
-	background-color: #5458b3;
+	background-color: greenyellow;
 }
 .badge-secondary {
 	color: #fff;
@@ -3719,7 +3719,7 @@ tr:first-child>td>.fc-day-grid-event {
 
 .media .media-right {
 	float: right;
-	color: #5458b3;
+	color: greenyellow;
 	font-weight: 600;
 	font-size: 16px;
 }
@@ -3930,7 +3930,7 @@ tr:first-child>td>.fc-day-grid-event {
 .accordion .accordion-header[aria-expanded="true"] {
 	-webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
 	box-shadow: 0 10px 30px rgba(0, 0, 0, .07);
-	background-color: #5458b3;
+	background-color: greenyellow;
 	color: #fff;
 }
 .accordion .accordion-body {
@@ -4167,7 +4167,7 @@ tr:first-child>td>.fc-day-grid-event {
 	background-color: #dee2e6;
 }
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #5458b3;
+    background-color: greenyellow;
 }
 .form-group.floating-addon .input-group-prepend, .form-group.floating-addon .input-group-append {
 	position: absolute;
@@ -4551,8 +4551,8 @@ tr:first-child>td>.fc-day-grid-event {
 	line-height: 1.5;
 	color: #fff;
 	content: "Browse";
-	background-color: #5458b3;
-    border-left: 1px solid #5458b3;
+	background-color: greenyellow;
+    border-left: 1px solid greenyellow;
 	border-radius: 0 3px 3px 0;
 }
 .terms ul{
