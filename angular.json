@@ -24,9 +24,37 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/plugins/bootstrap/css/bootstrap.min.css",
+              "src/assets/css/icons.css",
+              "src/assets/css/style.css",
+              "src/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css",
+              "src/assets/plugins/toggle-menu/sidemenu.css",
+              "src/assets/plugins/chartist/chartist.css",
+              "src/assets/plugins/chartist/chartist-plugin-tooltip.css",
+              "src/assets/plugins/fullcalendar/stylesheet1.css",
+              "src/assets/plugins/morris/morris.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/popper.js",
+              "src/assets/js/tooltip.js",
+              "src/assets/plugins/bootstrap/js/bootstrap.min.js",
+              "src/assets/plugins/nicescroll/jquery.nicescroll.min.js",
+              "src/assets/plugins/scroll-up-bar/dist/scroll-up-bar.min.js",
+              "src/assets/plugins/toggle-menu/sidemenu.js",
+              "src/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js",
+              "src/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js",
+              "src/assets/plugins/echarts/dist/echarts.js",
+              "src/assets/plugins/othercharts/jquery.knob.js",
+              "src/assets/plugins/othercharts/jquery.sparkline.min.js",
+              "src/assets/plugins/morris/morris.min.js",
+              "src/assets/plugins/morris/raphael.min.js",
+              "src/assets/js/scripts.js",
+              "src/assets/js/dashboard.js",
+              "src/assets/js/sparkline.js",
+              "src/assets/js/apexcharts.js",
+              "src/assets/js/moment.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -86,7 +114,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           }
         },
         "lint": {
