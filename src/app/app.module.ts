@@ -8,23 +8,22 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { ResetPasswordComponent } from './components/auth/reset-password/reset-password.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/auth/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminModule } from './components/admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideBarComponent,
     RegisterComponent,
     ResetPasswordComponent,
-    HeaderComponent,
-    LoginComponent,
-    DashboardComponent,
-    FooterComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

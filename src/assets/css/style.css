@@ -79,7 +79,7 @@ body {
 	outline: none;
 }
 a {
-	color: greenyellow;
+	color: green;
 	font-weight: 400;
 }
 a:hover {
@@ -255,7 +255,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .ion, a:not(.btn-social
 	color: #484c67 !important;
 }
 .text-primary {
-	color: greenyellow !important;
+	color: green !important;
 }
 .text-secondary {
 	color: #b03cd5 !important;
@@ -588,6 +588,7 @@ body.sidebar-gone .main-content {
 }
 .bg-primary {
 	background-color: green !important;
+	height:25rem;
 	color: #fff !important;
 }
 .bg-secondary {
@@ -4703,8 +4704,13 @@ tr:first-child>td>.fc-day-grid-event {
 	transition: all .5s;
 	color: #838ab6;
 	overflow: hidden;
-	border-radius:7px;
+	border-top-left-radius:25px;
+	border-top-right-radius:0px;
+	border-bottom-left-radius:25px;
+	border-bottom-right-radius:0px;
 	text-align: center;
+	height: 246px;
+	margin-top: 92px;
 }
 .single-page .wrapper{
 	background: #fff;
@@ -4758,7 +4764,8 @@ tr:first-child>td>.fc-day-grid-event {
 	pointer-events: none;
 }
 .single-page .wrapper h3, .single-page .wrapper h4{
-	margin-bottom: 25px;
+	margin-bottom: 15px;
+	margin-top: -15px;
 	font-size: 22px;
 }
 .single-page .wrapper input{
@@ -4974,7 +4981,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
 	position: relative;
 }
 .section-2{
-	height:10rem;
+	height:25rem;
 	position:relative;
 }
 .section-2 .section-3{
