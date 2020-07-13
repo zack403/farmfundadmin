@@ -1,0 +1,80 @@
+<div class="main-wrapper">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span class="text-danger">Delete</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" [routerLink]="['/admin/packages-list']" aria-label="Close">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Are you sure you want to <span class="text-danger">delete</span> this?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" [routerLink]="['/admin/packages-list']">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app-content">
+    <section class="section">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">View</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Farm Packages</li>
+        </ol>
+        <a [routerLink]="['/admin/packages-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+            <i class="fa fa-reply-all"></i>
+        </a>
+
+        <div class="section-body">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>FARM PACKAGES</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="row">
+                                    <div class="col-md-6 mb-5">
+                                        <div class="form-group files">
+                                            <label for="farm" class="">Farm Image</label>
+                                            <input type="" class="form-control1" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-5">
+                                        <div class="form-group">
+                                            <label for="farm">Package Name</label>
+                                            <input type="text" class="form-control" placeholder="" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cycle">Cycle</label>
+                                            <input type="text" class="form-control" placeholder="" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="location">Location</label>
+                                            <input type="text" class="form-control" placeholder="" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="unit">Unit</label>
+                                            <input type="text" class="form-control" placeholder="" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profit">Profit</label>
+                                            <input type="text" class="form-control" placeholder="" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

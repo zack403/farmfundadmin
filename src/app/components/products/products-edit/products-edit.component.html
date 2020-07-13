@@ -1,0 +1,63 @@
+<div class="app-content">
+    <section class="section">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Edit</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+        </ol>
+        <a [routerLink]="['/admin/products-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+            <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
+        </a>
+
+        <div class="section-body">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>PRODUCTS</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="productimage" class="">Profile Image</label>
+                                        <input type="file" id="productimage" class="form-control1" multiple="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="productname">Product Name</label>
+                                        <input type="text" id="productname" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="Price">Price</label>
+                                        <input type="text" id="Price" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="dimension">Dimension</label>
+                                        <input type="text" id="dimension" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="specification">Specification</label>
+                                        <textarea type="text" id="specification" class="form-control" placeholder="" required
+                                            required></textarea>
+                                    </div>
+                                    <!-- <div class="form-group col-md-4">
+                                        <label for="col-form-label">Product Type</label>
+                                            <select class="form-control">
+                                                <option>Full</option>
+                                                <option>Part</option>
+                                            </select>
+                                    </div> -->
+                                    
+                                </div>
+                                <a href="#" class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"
+                                        [routerLink]="['/admin/products-list']"><i class="fa fa-floppy-o"></i>
+                                        Save</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

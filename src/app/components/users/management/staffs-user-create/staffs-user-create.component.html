@@ -1,0 +1,67 @@
+<div class="app-content">
+    <section class="section">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Create</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Staff-Users</li>
+        </ol>
+        <a [routerLink]="['/admin/clients-user-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+            <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
+        </a>
+
+        <div class="section-body">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>USERS</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="profileimage" class="">Profile Image</label>
+                                        <input type="file" id="profileimage" class="form-control1" multiple="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="farmname">First Name</label>
+                                        <input type="text" id="farmname" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="lastname">Last Name</label>
+                                        <input type="text" id="lastname" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="othername">Other Name</label>
+                                        <input type="text" id="othername" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="department">Department</label>
+                                        <input type="text" id="department" class="form-control" placeholder="" required
+                                            required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="designation">Designation</label>
+                                        <input type="text" id="designation" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="staffphone">Phone No.</label>
+                                        <input type="text" id="email" class="form-control" placeholder="" required>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="staffemail">Email</label>
+                                        <input type="text" id="staffemail" class="form-control" placeholder="" required>
+                                    </div>
+                                </div>
+                                <a href="#" class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"
+                                        [routerLink]="['/admin/staffs-user-list']"><i class="fa fa-floppy-o"></i>
+                                        Save</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
