@@ -25,6 +25,7 @@
             ],
             "styles": [
               "src/assets/plugins/bootstrap/css/bootstrap.min.css",
+              "src/styles.css",
               "src/assets/css/icons.css",
               "src/assets/css/style.css",
               "src/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css",
@@ -32,7 +33,10 @@
               "src/assets/plugins/chartist/chartist.css",
               "src/assets/plugins/chartist/chartist-plugin-tooltip.css",
               "src/assets/plugins/fullcalendar/stylesheet1.css",
-              "src/assets/plugins/morris/morris.css"
+              "src/assets/plugins/morris/morris.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/sweetalert2/src/sweetalert2.scss"
+
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",

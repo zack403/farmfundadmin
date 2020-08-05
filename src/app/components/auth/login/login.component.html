@@ -6,20 +6,37 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="wrapper wrapper2">
-                                <form id="login" class="card-body" tabindex="500">
-                                    <h3>Login</h3>
-                                    <div class="mail">
-                                        <input type="email" name="mail">
-                                        <label>Mail or Username</label>
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login" class="card-body" tabindex="500">
+                                    <h3>Admin Login</h3>
+                                    <div [ngClass]="{'has-error': loginForm.get('email').errors && loginForm.get('email').touched}" class="mail">
+                                        <input type="email" formControlName="email" id="email" name="mail">
+                                        <label>Email</label>
+                                        <span
+                                        *ngIf="loginForm.controls['email'].hasError('required') && loginForm.get('email').touched"
+                                        class="align errormsg text-danger">Email is required</span>
+                                        <span style="margin-right: 197px;"
+                                      *ngIf="loginForm.controls['email'].hasError('email') && loginForm.get('email').touched"
+                                      class=" errormsg text-danger">Email is not valid</span>
                                     </div>
-                                    <div class="passwd">
-                                        <input type="password" name="password">
+                                
+                                    <div [ngClass]="{'has-error': loginForm.get('password').errors && loginForm.get('password').touched}" class="passwd">
+                                        <input type="password" name="password" 
+                                        class="form-control large-field" formControlName="password">
                                         <label>Password</label>
+                                        <span style="margin-right: 197px;"
+                                      *ngIf="loginForm.controls['password'].hasError('required') && loginForm.get('password').touched"
+                                      class=" errormsg text-danger"> Password is required</span>
+                                    <span style="margin-right: 96px;"
+                                      *ngIf="loginForm.controls['password'].hasError('minlength') && loginForm.get('password').touched"
+                                      class=" errormsg text-danger"> Password must be atleast 8 character long</span>
                                     </div>
+                                    
                                     <div class="submit">
-                                        <a class="btn btn-primary btn-block" [routerLink]="['/admin/dashboard']">Login</a>
+                                        <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid || isBusy" type="submit">
+                                            Login
+                                        </button>
                                     </div>
-                                    <p class="mb-2"><a href="forgot.html" >Forgot Password</a></p>
+                                    <p class="mb-2"><a [routerLink]="['/forgot-password']">Forgot Password</a></p>
                                     <!-- <p class="text-dark mb-0">Don't have account?<a [routerLink]="['/signup']" class="text-primary ml-1">Sign UP</a></p> -->
                                 </form>
                                 <!-- <div class="card-body border-top">

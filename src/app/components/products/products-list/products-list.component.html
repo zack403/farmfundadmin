@@ -5,95 +5,72 @@
             <li class="breadcrumb-item active" aria-current="page">Products</li>
         </ol>
         <a [routerLink]="['/admin/products-create']" class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"><i class="fe fe-plus-square"></i> Create</a>
-        <a class="btn btn-secondary dropdown-toggle pull-right" href="#" role="button" id="print" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fe fe-printer"></i> Action
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Print</a>
-          <a class="dropdown-item" href="#">Export to Excel</a>
-          <a class="dropdown-item" href="#">Import from Excel</a>
-        </div>
+       
         <div class="section-body ">
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="e-panel card">
                         <div class="card-header">
-                            <h4>PRODUCTS</h4>
+                            <div class="float-right">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" (input)="onChange(search)" name="search" [(ngModel)]="search" class="form-control" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary"><i class="ion ion-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <h4>PRODUCTS LIST ({{products?.totalItems}})</h4>
                         </div>
                         <div class="card-body">
                             <div class="e-table">
                                 <div class="table-responsive table-lg">
                                     <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
-                                        <tr>
-                                            <th class="text-center">S/No.</th>
-                                            <th class="text-center">Photo</th>
-                                            <th>Product Name</th>
-                                            <th>Price</th>
-                                            <th>Dimension</th>
-                                            <th>Specification</th>
-                                            <th class="text-center">Actions</th>
-                                        </tr>
-                                        <tr>
-                                            <td class="align-middle text-center">
-                                                <div
-                                                    class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                    <input class="custom-control-input" id="item-1" type="checkbox">
-                                                    <label class="custom-control-label" for="item-1"></label>
-                                                </div>
-                                            </td>
-                                            <td class=""><img alt="image" class="avatar avatar-md rounded-circle"
-                                                    src="assets/img/avatar/avatar-1.jpg"></td>
-                                                    <td class="">Rice</td>
-                                            <td class="">₦20,000</td>
-                                            <td class="">50kg</td>
-                                            <td class="">Bag</td>
+                                            <tr>
+                                                <th class="text-center">S/N</th>
+                                                <th>Product Name</th>
+                                                <th>Price</th>
+                                                <th>Created At</th>
+                                                <th class="text-center">Actions</th>
+                                            </tr>
+                                        <tr *ngFor="let item of products.data | paginate : {
+                                                    itemsPerPage: size,
+                                                    currentPage: page,
+                                                    totalItems: products.totalItems
+                                                }; let i = index">
+                                            <td class="align-middle text-center">{{i + 1}}</td>
+                                            <td class="">{{item?.productName}}</td>
+                                            <td class="text-right">{{item?.price  | currency: '&#8358; '}}</td>
+                                            <td class="">{{item?.createdAt | date: "mediumDate"}}</td>
+
                                             <td class="">
-                                                <a [routerLink]="['/admin/products-view']"
+                                                <a [routerLink]="['/admin/products-view', item.id]"
                                                     class="btn btn-outline-success"><i class="fa fa-binoculars"></i>
                                                     View</a>
                                                 &nbsp;
-                                                <a [routerLink]="['/admin/products-edit']"
+                                                <a [routerLink]="['/admin/products-edit', item.id]"
                                                     class="btn btn-outline-warning"><i class="fe fe-edit-2"></i>
                                                     Edit</a>
                                                 &nbsp;
-                                                <button class="btn btn-outline-danger" data-toggle="modal"
-                                                    data-target="#exampleModal"
-                                                    [routerLink]="['/admin/products-delete']"><i
-                                                        class="fe fe-trash-2"></i> Delete</button>
+                                                <button (click)="delete(item.id)" class="btn btn-outline-danger" ><i class="fe fe-trash-2"></i> Delete</button>
                                             </td>
                                         </tr>
+                                       
                                     </table>
                                 </div>
-                                <div class="d-flex justify-content-center">
-                                    <ul class="pagination mt-3 mb-0">
-                                        <li class="disabled page-item">
-                                            <a class="page-link" href="#">‹</a>
-                                        </li>
-                                        <li class="active page-item">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">3</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">4</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">5</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">›</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">»</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                               
                             </div>
+                        </div>
+                        <div >
+                            <pagination-controls
+                            class="my-pagination"
+                                previousLabel="Prev"
+                                nextLabel="Next"
+                                responsive="true"
+                                (pageChange)="handlePageChange($event)">
+                            </pagination-controls>
                         </div>
                     </div>
                 </div>

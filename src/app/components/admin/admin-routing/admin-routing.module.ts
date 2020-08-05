@@ -28,6 +28,7 @@ import { ProductsListComponent } from '../../products/products-list/products-lis
 import { ProductsCreateComponent } from '../../products/products-create/products-create.component';
 import { ProductsViewComponent } from '../../products/products-view/products-view.component';
 import { ProductsDeleteComponent } from '../../products/products-delete/products-delete.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 
 const adminRouter: Routes = [
@@ -35,7 +36,7 @@ const adminRouter: Routes = [
     // Admin-route
     path: 'admin',
     component: AdminComponent,
-    //canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     children: [
       // empty-route
       {
@@ -92,7 +93,7 @@ const adminRouter: Routes = [
       },
       // client-users-route
       {
-        path: 'clients-user-list',
+        path: 'customers-list',
         component: ClientsUserListComponent,
       },
       {
@@ -104,7 +105,7 @@ const adminRouter: Routes = [
         component: ClientsUserEditComponent,
       },
       {
-        path: 'clients-user-view',
+        path: 'customers-view/:id',
         component: ClientsUserViewComponent,
       },
       {
@@ -142,7 +143,7 @@ const adminRouter: Routes = [
         component: ProductsCreateComponent,
       },
       {
-        path: 'products-edit',
+        path: 'products-edit/:id',
         component: ProductsEditComponent,
       },
       {
@@ -150,7 +151,7 @@ const adminRouter: Routes = [
         component: ProductsListComponent,
       },
       {
-        path: 'products-view',
+        path: 'products-view/:id',
         component: ProductsViewComponent,
       },
       {
@@ -159,6 +160,7 @@ const adminRouter: Routes = [
       },
     ]
   },
+  {path: '**', redirectTo: 'login'},
 ];
 
 @NgModule({

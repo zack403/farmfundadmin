@@ -42,6 +42,21 @@ import { SubscriptionsCreateComponent } from './components/subsciptions/subscrip
 import { SubscriptionsEditComponent } from './components/subsciptions/subscriptions-edit/subscriptions-edit.component';
 import { SubscriptionsDeleteComponent } from './components/subsciptions/subscriptions-delete/subscriptions-delete.component';
 import { SubscriptionsViewComponent } from './components/subsciptions/subscriptions-view/subscriptions-view.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule,  SPINNER,POSITION,PB_DIRECTION , NgxUiLoaderHttpModule  } from 'ngx-ui-loader';
+import { JwtModule } from "@auth0/angular-jwt";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToasterService } from './services/toaster.service';
+import { AuthGuard } from './guards/auth.guard';
+import { ErrorInterceptor } from './interceptor/error.interceptor';
+import {NgxPaginationModule} from 'ngx-pagination'; 
+
+
+export function tokenGetter() {
+  return localStorage.getItem("adtoken");
+}
 
 @NgModule({
   declarations: [
@@ -83,9 +98,35 @@ import { SubscriptionsViewComponent } from './components/subsciptions/subscripti
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule,
+    NgxUiLoaderModule.forRoot({
+      fgsColor: 'green',
+      fgsType: SPINNER.ballScaleMultiple, // foreground spinner type
+      pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
+      pbColor: 'green',
+      masterLoaderId: 'master'
+    }),
+    NgxUiLoaderHttpModule.forRoot({showForeground: true}),
+    ToastrModule.forRoot({
+      preventDuplicates: true,
+      progressBar: true
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['localhost:3000'],
+        disallowedRoutes: [],
+      },
+    }),
   ],
-  providers: [],
+  providers: [ ToasterService,
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

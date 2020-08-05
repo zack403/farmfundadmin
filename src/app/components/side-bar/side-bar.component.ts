@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
-  constructor() { }
+  user: any;
+  photo: string;
+  constructor(private authSvc: AuthService) { }
 
   ngOnInit() {
+    this.user = this.authSvc.getCurrentUserData();
   }
+
+  logout() {
+    this.authSvc.logout(); 
+   }
 
 }

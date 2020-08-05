@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from 'src/app/services/products.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-products-view',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-view.component.css']
 })
 export class ProductsViewComponent implements OnInit {
-
-  constructor() { }
+  product: any = {};
+  apiUrl = environment.imagePath;
+  constructor(private route: ActivatedRoute, private prodSvc: ProductsService) { }
 
   ngOnInit() {
+    this.getProduct();
+  }
+
+  getProduct() {
+    this.prodSvc.GetById(this.route.snapshot.paramMap.get('id')).subscribe((res: any) => {
+      this.product = res.data;
+      this.product.imageUrl =`${this.apiUrl}/${this.product.imageUrl}`;
+      console.log(this.product);
+    })
   }
 
 }

@@ -2,9 +2,11 @@
     <section class="section">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">List</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Client-Users</li>
+            <li class="breadcrumb-item active" aria-current="page">Customers</li>
         </ol>
-        <a [routerLink]="['/admin/clients-user-create']"
+          <a (click)="refresh()"
+            class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"><i class="fe fe-plus-square"></i> Refresh</a>
+        <!-- <a [routerLink]="['/admin/clients-user-create']"
             class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"><i class="fe fe-plus-square"></i> Create</a>
         <a class="btn btn-secondary dropdown-toggle pull-right" href="#" role="button" id="print" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -14,88 +16,73 @@
             <a class="dropdown-item" href="#">Print</a>
             <a class="dropdown-item" href="#">Export to Excel</a>
             <a class="dropdown-item" href="#">Import from Excel</a>
-        </div>
+        </div> -->
         <div class="section-body ">
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="e-panel card">
                         <div class="card-header">
-                            <h4>USERS</h4>
+                            <div class="float-right">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" (input)="onChange(search)" name="search" [(ngModel)]="search" class="form-control" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary"><i class="ion ion-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <h4>CUSTOMERS LIST ({{customers?.totalItems}})</h4>
                         </div>
                         <div class="card-body">
                             <div class="e-table">
                                 <div class="table-responsive table-lg">
                                     <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
                                         <tr>
-                                            <th class="text-center">S/No.</th>
-                                            <th class="text-center">Photo</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Other Name</th>
+                                            <th class="text-center">S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
                                             <th>Phone No.</th>
+                                            <th>Date Registered</th>
+                                            <th>Bank Name</th>
+                                            <th>Acct No Name</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
-                                        <tr>
-                                            <td class="align-middle text-center">
-                                                <div
-                                                    class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                    <input class="custom-control-input" id="item-1" type="checkbox">
-                                                    <label class="custom-control-label" for="item-1"></label>
-                                                </div>
-                                            </td>
-                                            <td class=""><img alt="image" class="avatar avatar-md rounded-circle"
-                                                    src="assets/img/avatar/avatar-1.jpg"></td>
-                                            <td class="">Adam</td>
-                                            <td class="">Abraham</td>
-                                            <td class="">David</td>
-                                            <td class="">09033124679</td>
+                                        <tr *ngFor="let item of customers.data | paginate : {
+                                            itemsPerPage: size,
+                                            currentPage: page,
+                                            totalItems: customers.totalItems
+                                        }; let i = index">
+                                            <td class="">{{i + 1}}</td>
+                                            <td class="">{{item?.firstName}} {{item?.middleName}} {{item?.lastName}}</td>
+                                            <td class="">{{item?.email}}</td>
+                                            <td class="">{{item?.phoneNo}}</td>
+                                            <td class="">{{item?.createdAt | date: "mediumDate"}}</td>
+                                            <td class="">{{item?.bankName}}</td>
+                                            <td class="">{{item?.acctNo}}</td>
+
                                             <td class="">
-                                                <a [routerLink]="['/admin/clients-user-view']"
+                                                <a [routerLink]="['/admin/customers-view', item.id]"
                                                     class="btn btn-outline-success"><i class="fa fa-binoculars"></i>
                                                     View</a>
                                                 &nbsp;
-                                                <!-- <a [routerLink]="['/admin/clients-user-edit']"
-                                                    class="btn btn-outline-warning"><i class="fe fe-edit-2"></i>
-                                                    Edit</a>
-                                                &nbsp; -->
-                                                <button class="btn btn-outline-danger" data-toggle="modal"
-                                                    data-target="#exampleModal"
-                                                    [routerLink]="['/admin/clients-user-delete']"><i
+                                                <button class="btn btn-outline-danger" (click)="delete(item.id)"><i
                                                         class="fe fe-trash-2"></i> Delete</button>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                                <div class="d-flex justify-content-center">
-                                    <ul class="pagination mt-3 mb-0">
-                                        <li class="disabled page-item">
-                                            <a class="page-link" href="#">‹</a>
-                                        </li>
-                                        <li class="active page-item">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">3</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">4</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">5</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">›</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">»</a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
+                        </div>
+                        <div >
+                            <pagination-controls
+                            class="my-pagination"
+                                previousLabel="Prev"
+                                nextLabel="Next"
+                                responsive="true"
+                                (pageChange)="handlePageChange($event)">
+                            </pagination-controls>
                         </div>
                     </div>
                 </div>

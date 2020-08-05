@@ -14,39 +14,25 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>PRODUCTS</h4>
+                            <h4>VIEW PRODUCT</h4>
                         </div>
                         <div class="card-body">
                             <form method="post">
                                 <div class="row">
                                     <div class="form-group col-md-4">
-                                        <label for="productimage" class="">Profile Image</label>
-                                        <input type="file" id="productimage" class="form-control1" multiple="" readonly>
+                                        <label for="productimage" class="">Product Image</label>
+                                        <img src="{{product.imageUrl}}" />
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="productname">Product Name</label>
-                                        <input type="text" id="productname" class="form-control" placeholder="" readonly>
+                                        <input type="text" id="productname" name="productname" [(ngModel)]="product.productName" class="form-control"  readonly>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="Price">Price</label>
-                                        <input type="text" id="Price" class="form-control" placeholder="" readonly>
+                                        <label for="price">Price</label>
+                                        <input type="text" id="Price" name="price" [(ngModel)]="product.price" class="form-control"  readonly>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="dimension">Dimension</label>
-                                        <input type="text" id="dimension" class="form-control" placeholder="" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="specification">Specification</label>
-                                        <textarea type="text" id="specification" class="form-control" placeholder="" readonly
-                                            readonly></textarea>
-                                    </div>
-                                    <!-- <div class="form-group col-md-4">
-                                        <label for="col-form-label">Product Type</label>
-                                            <select class="form-control">
-                                                <option>Full</option>
-                                                <option>Part</option>
-                                            </select>
-                                    </div> -->
+                                    
+                                   
                                     
                                 </div>
                             </form>
