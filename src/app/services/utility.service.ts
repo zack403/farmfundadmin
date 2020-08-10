@@ -20,4 +20,10 @@ export class UtilityService {
       return res;
     }))
   }
+
+  PutSingle(route, id) {
+    return this.httpSvc.put(`${route}/` + id, {}).pipe(tap(res => {
+      return res;
+    }))
+  }
 }

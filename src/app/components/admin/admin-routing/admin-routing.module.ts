@@ -29,6 +29,9 @@ import { ProductsCreateComponent } from '../../products/products-create/products
 import { ProductsViewComponent } from '../../products/products-view/products-view.component';
 import { ProductsDeleteComponent } from '../../products/products-delete/products-delete.component';
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { SubscriptionsListComponent } from '../../subsciptions/subscriptions-list/subscriptions-list.component';
+import { SubscriptionsViewComponent } from '../../subsciptions/subscriptions-view/subscriptions-view.component';
+import { SubscriptionsEditComponent } from '../../subsciptions/subscriptions-edit/subscriptions-edit.component';
 
 
 const adminRouter: Routes = [
@@ -157,6 +160,18 @@ const adminRouter: Routes = [
       {
         path: 'products-delete',
         component: ProductsDeleteComponent,
+      },
+      {
+        path: 'partners-list',
+        component: SubscriptionsListComponent,
+      },
+      {
+        path: 'partners-view/:id',
+        component: SubscriptionsViewComponent,
+      },
+      {
+        path: 'partners-edit/:id',
+        component: SubscriptionsEditComponent,
       },
     ]
   },

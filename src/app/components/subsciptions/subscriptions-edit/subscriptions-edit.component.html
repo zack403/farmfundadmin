@@ -1,1 +1,85 @@
-<p>subscriptions-edit works!</p>
+<div class="app-content">
+    <section class="section">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Edit</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Partners</li>
+        </ol>
+        <a [routerLink]="['/admin/partners-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+            <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
+        </a>
+
+        <div class="section-body">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>PARTNER INFO</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" [(ngModel)]="partner.name" class="form-control" readonly>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="address">Address</label>
+                                        <input type="text" id="address" name="address" [(ngModel)]="partner.address" class="form-control"  readonly>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="phone">Phone No.</label>
+                                        <input type="text" id="phone" name="phone" [(ngModel)]="partner.phoneNo" class="form-control"  readonly>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-4">
+                                        <label for="email">Email</label>
+                                        <input type="text" id="email" name="email" class="form-control" [(ngModel)]="partner.email" readonly>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="e-panel card">
+                        <div class="card-header">
+                            <h4>PARTNER ORDERS ({{partner.PurchaseDetails.length}})</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="e-table">
+                                <div class="table-responsive table-lg">
+                                    <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
+                                        <tr>
+                                            <th>S/N</th>
+                                            <th>Product</th>
+                                            <th>Amount</th>
+                                            <th>Unit</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        <tr *ngFor="let item of partner.PurchaseDetails; let i = index">
+                                            <td class="">{{i + 1}}</td>
+                                            <td class="">{{item?.product}}</td>
+                                            <td class="">{{item?.amount}}</td>
+                                            <td class="">{{item?.unit}}</td>
+                                            <td class="">
+                                                
+                                                <a title="Edit" (click)="edit(item)"
+                                                    class="btn btn-outline-warning"><i class="fa fa-pencil"></i>
+                                                    </a>
+                                                &nbsp;
+                                                <button title="Delete" class="btn btn-outline-danger" (click)="delete(item)"><i
+                                                        class="fe fe-trash-2"></i> </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

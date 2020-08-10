@@ -25,6 +25,9 @@
             <a class="side-menu__item" [routerLink]="['/admin/products-list']"><i class="side-menu__icon fa fa-cube"></i><span class="side-menu__label">Products</span></a>
         </li>
         <li>
+            <a class="side-menu__item" [routerLink]="['/admin/partners-list']"><i class="side-menu__icon fa fa-group"></i><span class="side-menu__label">Farmify Partners</span></a>
+        </li>
+        <li>
             <a class="side-menu__item" [routerLink]="['/admin/packages-list']"><i class="side-menu__icon fa fa-cubes"></i><span class="side-menu__label">Farm Packages</span></a>
         </li>
         <li>
@@ -40,7 +43,7 @@
             </ul>
         </li>
         <li>
-            <a class="side-menu__item" (click)="logout()"><i class="side-menu__icon fa fa-sign-out"></i><span class="side-menu__label">Log Out</span></a>
+            <a class="side-menu__item" [routerLink]="['/login']" ><i class="side-menu__icon fa fa-sign-out"></i><span class="side-menu__label">Log Out</span></a>
         </li>
     </ul>
 </aside>

@@ -1,0 +1,11 @@
+.pending {
+    font-size: 15px;
+    color: blue;
+    font-weight: bold;
+
+  }
+.delivered {
+    font-size: 15px;
+    color: green;
+    font-weight: bold;
+}

@@ -1,1 +1,87 @@
-<p>subscriptions-list works!</p>
+<div class="app-content">
+    <section class="section">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">List</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Farmify Partners</li>
+        </ol>
+          <a (click)="refresh()"
+            class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"><i class="fe fe-plus-square"></i> Refresh</a>
+        <div class="section-body ">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="e-panel card">
+                        <div class="card-header">
+                            <div class="float-right">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" (input)="onChange(search)" name="search" [(ngModel)]="search" class="form-control" placeholder="Search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-primary"><i class="ion ion-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <h4>FARMIFY PARTNERS LIST ({{partners?.totalItems}})</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="e-table">
+                                <div class="table-responsive table-lg">
+                                    <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
+                                        <tr>
+                                            <th class="text-center">S/N</th>
+                                            <th>Full Name</th>
+                                            <th>Email</th>
+                                            <th>Phone No.</th>
+                                            <th>Type</th>
+                                            <th>Status</th>
+                                            <th class="text-center">Actions</th>
+                                        </tr>
+                                        <tr *ngFor="let item of partners.data | paginate : {
+                                            itemsPerPage: size,
+                                            currentPage: page,
+                                            totalItems: partners.totalItems
+                                        }; let i = index">
+                                            <td class="">{{i + 1}}</td>
+                                            <td class="">{{item?.name}}</td>
+                                            <td class="">{{item?.email}}</td>
+                                            <td class="">{{item?.phoneNo}}</td>
+                                            <td class="">{{item?.type}}</td>
+                                            <td><span
+                                                [ngClass]="{'pending': item.status === 'Pending', 'delivered': item.status === 'Delivered'}">{{item.status}}</span></td>
+                                            <td class="">
+                                                <a title="View" [routerLink]="['/admin/partners-view', item.id]"
+                                                    class="btn btn-outline-success"><i class="fa fa-eye"></i>
+                                                    </a>
+                                                &nbsp;
+                                                <a title="Edit" *ngIf="item.status === 'Pending'" [routerLink]="['/admin/partners-edit', item.id]"
+                                                    class="btn btn-outline-warning"><i class="fa fa-pencil"></i>
+                                                    </a>
+                                                &nbsp;
+                                                <button title="Mark as delivered" *ngIf="item.status === 'Pending'" (click)="markAsDelivered(item.id)"
+                                                    class="btn btn-outline-secondary"><i class="fa fa-check"></i>
+                                                    </button>
+                                                &nbsp;
+                                                <button title="Delete" class="btn btn-outline-danger" (click)="delete(item.id)"><i
+                                                        class="fe fe-trash-2"></i> </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div >
+                            <pagination-controls
+                            class="my-pagination"
+                                previousLabel="Prev"
+                                nextLabel="Next"
+                                responsive="true"
+                                (pageChange)="handlePageChange($event)">
+                            </pagination-controls>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
