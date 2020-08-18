@@ -45,7 +45,7 @@
                 <div class="col-lg-12">
                     <div class="e-panel card">
                         <div class="card-header">
-                            <h4>PARTNER ORDERS ({{partner.PurchaseDetails.length}})</h4>
+                            <h4>PARTNER ORDERS ({{partner.PurchaseDetails.length}}) <small style="color: black;">You can edit or delete each item by pressing on any of the actions button and click <b>Save</b> afterwards.</small></h4>
                         </div>
                         <div class="card-body">
                             <div class="e-table">
@@ -54,28 +54,31 @@
                                         <tr>
                                             <th>S/N</th>
                                             <th>Product</th>
-                                            <th>Amount</th>
+                                            <th class="text-center">Price</th>
                                             <th>Unit</th>
                                             <th>Actions</th>
                                         </tr>
                                         <tr *ngFor="let item of partner.PurchaseDetails; let i = index">
                                             <td class="">{{i + 1}}</td>
                                             <td class="">{{item?.product}}</td>
-                                            <td class="">{{item?.amount}}</td>
+                                            <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
                                             <td class="">{{item?.unit}}</td>
                                             <td class="">
                                                 
-                                                <a title="Edit" (click)="edit(item)"
+                                                <a title="Edit" (click)="edit(i)"
                                                     class="btn btn-outline-warning"><i class="fa fa-pencil"></i>
                                                     </a>
                                                 &nbsp;
-                                                <button title="Delete" class="btn btn-outline-danger" (click)="delete(item)"><i
+                                                <button title="Delete" class="btn btn-outline-danger" (click)="delete(i)"><i
                                                         class="fe fe-trash-2"></i> </button>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
+                        </div>
+                        <div class="text-right card-footer">
+                            <button (click)="save()" class="btn btn-primary">Save</button>
                         </div>
                     </div>
                 </div>

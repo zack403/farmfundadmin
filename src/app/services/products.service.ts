@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Cacheable } from 'ngx-cacheable';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +20,14 @@ export class ProductsService {
       }))
     }
 
+    @Cacheable()
     GetProducts(page, size, search) {
       return this.httpSvc.get(`foodmarket?page=${page}&size=${size}&search=${search}`).pipe(tap(res => {
         return res;
       }))
     }
 
+    @Cacheable()
     GetById(id: any){
       return this.httpSvc.getById('foodmarket/', id).pipe(tap(res => {
         return res;

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { HttpService } from './http.service';
 import { tap } from 'rxjs/operators';
+import { Cacheable } from 'ngx-cacheable';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class FarmifypartnersService {
 
   constructor(private httpSvc: HttpService) { }
 
+  @Cacheable()
   GetById(id: any){
     return this.httpSvc.getById('purchase/', id).pipe(tap(res => {
       return res;

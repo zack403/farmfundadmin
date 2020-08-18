@@ -62,13 +62,13 @@
                                         <tr>
                                             <th>S/N</th>
                                             <th>Product</th>
-                                            <th>Amount</th>
+                                            <th class="text-center">Price</th>
                                             <th>Unit</th>
                                         </tr>
                                         <tr *ngFor="let item of partner.PurchaseDetails; let i = index">
                                             <td class="">{{i + 1}}</td>
                                             <td class="">{{item?.product}}</td>
-                                            <td class="">{{item?.amount}}</td>
+                                            <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
                                             <td class="">{{item?.unit}}</td>
                                         </tr>
                                     </table>

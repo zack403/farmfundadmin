@@ -30,7 +30,7 @@
                                     <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
                                         <tr>
                                             <th class="text-center">S/N</th>
-                                            <th>Full Name</th>
+                                            <th>Partner Name</th>
                                             <th>Email</th>
                                             <th>Phone No.</th>
                                             <th>Type</th>
@@ -47,8 +47,8 @@
                                             <td class="">{{item?.email}}</td>
                                             <td class="">{{item?.phoneNo}}</td>
                                             <td class="">{{item?.type}}</td>
-                                            <td><span
-                                                [ngClass]="{'pending': item.status === 'Pending', 'delivered': item.status === 'Delivered'}">{{item.status}}</span></td>
+                                            <td><label
+                                                [ngClass]="{'badge badge-info badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Delivered'}">{{item.status}}</label></td>
                                             <td class="">
                                                 <a title="View" [routerLink]="['/admin/partners-view', item.id]"
                                                     class="btn btn-outline-success"><i class="fa fa-eye"></i>

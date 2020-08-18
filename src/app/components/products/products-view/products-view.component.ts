@@ -20,7 +20,11 @@ export class ProductsViewComponent implements OnInit {
   getProduct() {
     this.prodSvc.GetById(this.route.snapshot.paramMap.get('id')).subscribe((res: any) => {
       this.product = res.data;
-      this.product.imageUrl =`${this.apiUrl}/${this.product.imageUrl}`;
+      if(this.product.imageUrl.includes("http")) {
+        return;
+      }else {
+        this.product.imageUrl =`${this.apiUrl}/${this.product.imageUrl}`;
+      }
       console.log(this.product);
     })
   }
