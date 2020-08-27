@@ -2,7 +2,7 @@
     <section class="section">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">List</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Farmify Market Orders</li>
+            <li class="breadcrumb-item active" aria-current="page">Farmify Market Subscribers</li>
         </ol>
           <a (click)="refresh()"
             class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"><i class="fe fe-plus-square"></i> Refresh</a>
@@ -22,7 +22,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <h4>FARMIFY MARKET ORDERS LIST ({{partners?.totalItems}})</h4>
+                            <h4>FARMIFY MARKET SUBSCRIBERS ({{subscribers?.totalItems}})</h4>
                         </div>
                         <div class="card-body">
                             <div class="e-table">
@@ -30,39 +30,44 @@
                                     <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
                                         <tr>
                                             <th class="text-center">S/N</th>
-                                            <th>Partner Name</th>
-                                            <th>Email</th>
+                                            <th>Subscriber Name</th>
                                             <th>Phone No.</th>
-                                            <th>Type</th>
+                                            <th>Unit</th>
+                                            <th>Subscription Amount</th>
+                                            <th>Roi</th>
+                                            <th>Roc</th>
+                                            <th>Payment Type </th>
+                                            <th >Proof of Payment</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
                                             <th>Status</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
-                                        <tr *ngFor="let item of partners.data | paginate : {
+                                        <tr *ngFor="let item of subscribers.data | paginate : {
                                             itemsPerPage: size,
                                             currentPage: page,
-                                            totalItems: partners.totalItems
+                                            totalItems: subscribers.totalItems
                                         }; let i = index">
                                             <td class="">{{i + 1}}</td>
                                             <td class="">{{item?.name}}</td>
-                                            <td class="">{{item?.email}}</td>
                                             <td class="">{{item?.phoneNo}}</td>
-                                            <td class="">{{item?.type}}</td>
+                                            <td class="">{{item?.unit}}</td>
+                                            <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
+                                            <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
+                                            <td class="text-right">{{item?.roc | currency: '&#8358; '}}</td>
+                                            <td class="">{{item?.paymentType}}</td>
+                                            <td  class=""><a *ngIf="item.proofOfPayment" download href="{{imagePath}}/{{item?.proofOfPayment}}">View</a>
+                                            </td>
+                                            <td class="">{{item?.startDate | date: "mediumDate"}}</td>
+                                            <td class="">{{item?.endDate | date: "mediumDate"}}</td>
                                             <td><label
-                                                [ngClass]="{'badge badge-info badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Delivered'}">{{item.status}}</label></td>
+                                                [ngClass]="{'badge badge-info badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label></td>
                                             <td class="">
-                                                <a title="View" [routerLink]="['/admin/orders-view', item.id]"
-                                                    class="btn btn-outline-success"><i class="fa fa-eye"></i>
-                                                    </a>
-                                                &nbsp;
-                                                <a title="Edit" *ngIf="item.status === 'Pending'" [routerLink]="['/admin/orders-edit', item.id]"
-                                                    class="btn btn-outline-warning"><i class="fa fa-pencil"></i>
-                                                    </a>
-                                                &nbsp;
-                                                <button title="Mark as delivered" *ngIf="item.status === 'Pending'" (click)="markAsDelivered(item.id)"
-                                                    class="btn btn-outline-secondary"><i class="fa fa-check"></i>
+                                                <button title="Activate Subscriber" *ngIf="item.status === 'Pending'" (click)="activateSubscriber(item.id)"
+                                                    class="btn btn-outline-success"><i class="fa fa-check"></i>
                                                     </button>
                                                 &nbsp;
-                                                <button title="Delete" class="btn btn-outline-danger" (click)="delete(item.id)"><i
+                                                <button title="Delete"  *ngIf="item.status === 'Pending'" class="btn btn-outline-danger" (click)="delete(item.id)"><i
                                                         class="fe fe-trash-2"></i> </button>
                                             </td>
                                         </tr>

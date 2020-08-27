@@ -43,7 +43,6 @@ import { SubscriptionsEditComponent } from './components/subsciptions/subscripti
 import { SubscriptionsDeleteComponent } from './components/subsciptions/subscriptions-delete/subscriptions-delete.component';
 import { SubscriptionsViewComponent } from './components/subsciptions/subscriptions-view/subscriptions-view.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgxUiLoaderModule, NgxUiLoaderRouterModule,  SPINNER,POSITION,PB_DIRECTION , NgxUiLoaderHttpModule  } from 'ngx-ui-loader';
 import { JwtModule } from "@auth0/angular-jwt";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from 'ngx-toastr';
@@ -51,7 +50,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToasterService } from './services/toaster.service';
 import { AuthGuard } from './guards/auth.guard';
 import { ErrorInterceptor } from './interceptor/error.interceptor';
-import {NgxPaginationModule} from 'ngx-pagination'; 
+import {NgxPaginationModule} from 'ngx-pagination';
+import { SubscribersComponent } from './components/subscribers/subscribers.component'; 
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+
+// for Router import:
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 
 export function tokenGetter() {
@@ -94,6 +98,7 @@ export function tokenGetter() {
     SubscriptionsEditComponent,
     SubscriptionsDeleteComponent,
     SubscriptionsViewComponent,
+    SubscribersComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,14 +109,8 @@ export function tokenGetter() {
     HttpClientModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
-    NgxUiLoaderModule.forRoot({
-      fgsColor: 'green',
-      fgsType: SPINNER.ballScaleMultiple, // foreground spinner type
-      pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
-      pbColor: 'green',
-      masterLoaderId: 'master'
-    }),
-    NgxUiLoaderHttpModule.forRoot({showForeground: true}),
+    LoadingBarHttpClientModule,
+    LoadingBarRouterModule,
     ToastrModule.forRoot({
       preventDuplicates: true,
       progressBar: true

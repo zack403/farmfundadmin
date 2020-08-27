@@ -4,7 +4,7 @@
             <li class="breadcrumb-item"><a href="#">Edit</a></li>
             <li class="breadcrumb-item active" aria-current="page">Partners</li>
         </ol>
-        <a [routerLink]="['/admin/partners-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+        <a [routerLink]="['/admin/orders-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
             <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
         </a>
 
@@ -60,8 +60,8 @@
                                         </tr>
                                         <tr *ngFor="let item of partner.PurchaseDetails; let i = index">
                                             <td class="">{{i + 1}}</td>
-                                            <td class="">{{item?.product}}</td>
-                                            <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
+                                            <td class="">{{item?.productName}}</td>
+                                            <td class="text-right">{{item?.price | currency: '&#8358; '}}</td>
                                             <td class="">{{item?.unit}}</td>
                                             <td class="">
                                                 

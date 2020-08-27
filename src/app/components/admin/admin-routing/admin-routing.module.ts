@@ -32,6 +32,7 @@ import { AuthGuard } from 'src/app/guards/auth.guard';
 import { SubscriptionsListComponent } from '../../subsciptions/subscriptions-list/subscriptions-list.component';
 import { SubscriptionsViewComponent } from '../../subsciptions/subscriptions-view/subscriptions-view.component';
 import { SubscriptionsEditComponent } from '../../subsciptions/subscriptions-edit/subscriptions-edit.component';
+import { SubscribersComponent } from '../../subscribers/subscribers.component';
 
 
 const adminRouter: Routes = [
@@ -162,16 +163,20 @@ const adminRouter: Routes = [
         component: ProductsDeleteComponent,
       },
       {
-        path: 'partners-list',
+        path: 'orders-list',
         component: SubscriptionsListComponent,
       },
       {
-        path: 'partners-view/:id',
+        path: 'orders-view/:id',
         component: SubscriptionsViewComponent,
       },
       {
-        path: 'partners-edit/:id',
+        path: 'orders-edit/:id',
         component: SubscriptionsEditComponent,
+      },
+      {
+        path: 'farmify-market-subscribers',
+        component: SubscribersComponent,
       },
     ]
   },
