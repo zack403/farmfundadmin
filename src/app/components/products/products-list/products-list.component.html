@@ -47,14 +47,12 @@
 
                                             <td class="">
                                                 <a [routerLink]="['/admin/products-view', item.id]"
-                                                    class="btn btn-outline-success"><i class="fa fa-eye"></i>
-                                                    View</a>
+                                                    class="btn btn-outline-success"><i class="fa fa-eye"></i></a>
                                                 &nbsp;
                                                 <a [routerLink]="['/admin/products-edit', item.id]"
-                                                    class="btn btn-outline-warning"><i class="fe fe-edit-2"></i>
-                                                    Edit</a>
+                                                    class="btn btn-outline-warning"><i class="fe fe-edit-2"></i></a>
                                                 &nbsp;
-                                                <button (click)="delete(item.id)" class="btn btn-outline-danger" ><i class="fe fe-trash-2"></i> Delete</button>
+                                                <button (click)="delete(item.id)" class="btn btn-outline-danger" ><i class="fe fe-trash-2"></i></button>
                                             </td>
                                         </tr>
                                        

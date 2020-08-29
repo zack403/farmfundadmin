@@ -2293,6 +2293,10 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 .card .card-header, .card .card-footer, .card .card-body {
 	background-color: transparent;
 }
+.card .card-header {
+	background-color: green;
+	color: white;
+}
 .card .card-body {
 	padding:30px;
 }
@@ -2339,7 +2343,7 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	letter-spacing: 0;
 	margin:0;
 	line-height: 30px;
-	color: green;
+	color: white;
 }
 .card .card-header h4 a.unstyled {
 	font-size: 14px;

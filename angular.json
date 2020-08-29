@@ -36,7 +36,6 @@
               "src/assets/plugins/morris/morris.css",
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/sweetalert2/src/sweetalert2.scss"
-
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
@@ -118,9 +117,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -149,6 +146,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "farmfundsadmin"
+    }
+  },
+  "defaultProject": "farmfundsadmin",
+  "cli": {
+    "analytics": "24de506e-ac8b-43af-922b-f8a273d7cb88"
+  }
 }

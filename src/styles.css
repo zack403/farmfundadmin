@@ -9,3 +9,8 @@
 .my-pagination /deep/ .ngx-pagination .current {
     background: green;
   }
+
+  th {
+      background-color: grey;
+      color: white;
+  }
