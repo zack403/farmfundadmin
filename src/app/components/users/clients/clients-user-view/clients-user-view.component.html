@@ -125,7 +125,7 @@
                                         </tr>
                                         <tr
                                             *ngFor="let i of customer.Purchases; let index = index">
-                                            <th class="">{{index + 1}}</th>
+                                            <td class="">{{index + 1}}</td>
                                             <td class="">{{i.name}}</td>
                                             <td class="">{{i.phoneNo}}</td>
                                             <td class="">{{i.type}}</td>
@@ -147,14 +147,14 @@
                                 </table>
                                 <table *ngIf="showDetails" class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
                                         <tr>
-                                            <th class="text-center">S/N</th>
+                                            <th class="">S/N</th>
                                             <th>Product</th>
                                             <th>Price</th>
                                             <th>Quantity</th>
                                         </tr>
                                         <tr
                                             *ngFor="let detail of details; let index = index">
-                                            <th class="">{{index + 1}}</th>
+                                            <td class="">{{index + 1}}</td>
                                             <td class="">{{detail.productName}}</td>
                                             <td class="text-right">
                                                 {{detail.price | currency: '&#8358; '}}
