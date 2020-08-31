@@ -8,6 +8,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./clients-user-view.component.css']
 })
 export class ClientsUserViewComponent implements OnInit {
+  customer: any;
+  details: any;
+  showDetails: boolean = false;
+
+
 
   constructor(private utilSvc: UtilityService, private route: ActivatedRoute) { }
 
@@ -17,8 +22,21 @@ export class ClientsUserViewComponent implements OnInit {
 
   getCustomer() {
     this.utilSvc.GetById('users', this.route.snapshot.paramMap.get('id')).subscribe((res: any) => {
+      this.customer = res.data;
       console.log(res);
     })
+  }
+
+  viewOrder(id) {
+      const item = this.customer.Purchases.find(x => x.id === id);
+      if(item){
+        this.showDetails = true;
+        this.details = item.PurchaseDetails;
+      }
+  }
+
+  back() {
+    this.showDetails = false;
   }
 
 }

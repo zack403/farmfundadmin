@@ -48,7 +48,7 @@
                                             <td class="">{{item?.phoneNo}}</td>
                                             <td class="">{{item?.type}}</td>
                                             <td><label
-                                                [ngClass]="{'badge badge-info badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Delivered'}">{{item.status}}</label></td>
+                                                [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Delivered'}">{{item.status}}</label></td>
                                             <td class="">
                                                 <a title="View" [routerLink]="['/admin/orders-view', item.id]"
                                                     class="btn btn-outline-success"><i class="fa fa-eye"></i>

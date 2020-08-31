@@ -56,12 +56,12 @@
                                             <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
                                             <td class="text-right">{{item?.roc | currency: '&#8358; '}}</td>
                                             <td class="">{{item?.paymentType}}</td>
-                                            <td  class=""><a *ngIf="item.proofOfPayment" download href="{{imagePath}}/{{item?.proofOfPayment}}">View</a>
+                                            <td class=""><a *ngIf="item.proofOfPayment && item.status === 'Pending'" download href="{{imagePath}}/{{item?.proofOfPayment}}">View</a>
                                             </td>
                                             <td class="">{{item?.startDate | date: "mediumDate"}}</td>
                                             <td class="">{{item?.endDate | date: "mediumDate"}}</td>
                                             <td><label
-                                                [ngClass]="{'badge badge-info badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label></td>
+                                                [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label></td>
                                             <td class="">
                                                 <button title="Activate Subscriber" *ngIf="item.status === 'Pending'" (click)="activateSubscriber(item.id)"
                                                     class="btn btn-outline-success"><i class="fa fa-check"></i>
