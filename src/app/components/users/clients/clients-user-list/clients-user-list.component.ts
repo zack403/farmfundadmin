@@ -13,7 +13,7 @@ export class ClientsUserListComponent implements OnInit {
   page: number = 1;
   size: number = 15;
   search: string = "";
-  customers: Array<any> = [];
+  customers: any;
   constructor(private utilSvc: UtilityService,
     private toastr: ToasterService) { }
 

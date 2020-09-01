@@ -14,7 +14,7 @@ export class SubscriptionsListComponent implements OnInit {
   page: number = 1;
   size: number = 15;
   search: string = "";
-  partners: Array<any> = [];
+  partners: any;
   constructor(private utilSvc: UtilityService,
     private toastr: ToasterService) { }
 

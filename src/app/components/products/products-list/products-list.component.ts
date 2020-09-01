@@ -13,7 +13,7 @@ export class ProductsListComponent implements OnInit {
   page: number = 1;
   size: number = 15;
   search: string = "";
-  products: Array<any> = [];
+  products: any;
   constructor(private prodSvc: ProductsService, 
     private toastr: ToasterService) { }
 

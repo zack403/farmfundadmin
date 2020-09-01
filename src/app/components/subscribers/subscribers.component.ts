@@ -15,7 +15,7 @@ export class SubscribersComponent implements OnInit {
   page: number = 1;
   size: number = 15;
   search: string = "";
-  subscribers: Array<any> = [];
+  subscribers: any;
   proofOfPayment: boolean = false;
   constructor(private utilSvc: UtilityService,
     private toastr: ToasterService) { }
