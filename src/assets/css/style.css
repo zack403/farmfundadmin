@@ -2151,28 +2151,6 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	background-size: 40px;
 	padding-right: 60px;
 }
-.form-control.creditcard.visa {
-	background-image: url("../img/visa.html");
-}
-.form-control.creditcard.americanexpress {
-	background-image: url("../img/americanexpress.html");
-}
-.form-control.creditcard.dinersclub {
-	background-image: url("../img/dinersclub.html");
-}
-.form-control.creditcard.discover {
-	background-image: url("../img/discover.html");
-}
-.form-control.creditcard.jcb {
-	background-image: url("../img/jcb.html");
-}
-.form-control.creditcard.mastercard {
-	background-image: url("../img/mastercard.html");
-}
-.form-control.creditcard.visa {
-	background-image: url("../img/visa.html");
-}
-/*-- end form control --*/
 
 /*
  * Alert
@@ -2746,21 +2724,7 @@ table tr:hover .table-links {
 	height: 60px;
 	background-size: 100%;
 }
-.browser.browser-chrome {
-	background-image: url('../img/browsers/chrome.png');
-}
-.browser.browser-firefox {
-	background-image: url('../img/browsers/firefox.png');
-}
-.browser.browser-internet-explorer {
-	background-image: url('../img/browsers/internet-explorer.png');
-}
-.browser.browser-opera {
-	background-image: url('../img/browsers/opera.png');
-}
-.browser.browser-safari {
-	background-image: url('../img/browsers/safari.png');
-}
+
 /*
  * FullCalendar
  * ----------------------

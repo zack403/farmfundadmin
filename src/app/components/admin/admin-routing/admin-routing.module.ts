@@ -8,17 +8,12 @@ import { PackagesListComponent } from '../../farmpackages/packages-list/packages
 import { PackagesEditComponent } from '../../farmpackages/packages-edit/packages-edit.component';
 import { PackagesDeleteComponent } from '../../farmpackages/packages-delete/packages-delete.component';
 import { PackagesViewComponent } from '../../farmpackages/packages-view/packages-view.component';
-import { InvestmentsCreateComponent } from '../../investments/investments-create/investments-create.component';
 import { InvestmentsListComponent } from '../../investments/investments-list/investments-list.component';
 import { InvestmentsEditComponent } from '../../investments/investments-edit/investments-edit.component';
-import { InvestmentsDeleteComponent } from '../../investments/investments-delete/investments-delete.component';
 import { InvestmentsViewComponent } from '../../investments/investments-view/investments-view.component';
 import { ClientsUserListComponent } from '../../users/clients/clients-user-list/clients-user-list.component';
-import { ClientsUserCreateComponent } from '../../users/clients/clients-user-create/clients-user-create.component';
-import { ClientsUserEditComponent } from '../../users/clients/clients-user-edit/clients-user-edit.component';
 import { ClientsUserViewComponent } from '../../users/clients/clients-user-view/clients-user-view.component';
 import { StaffsUserListComponent } from '../../users/management/staffs-user-list/staffs-user-list.component';
-import { ClientsUserDeleteComponent } from '../../users/clients/clients-user-delete/clients-user-delete.component';
 import { StaffsUserCreateComponent } from '../../users/management/staffs-user-create/staffs-user-create.component';
 import { StaffsUserEditComponent } from '../../users/management/staffs-user-edit/staffs-user-edit.component';
 import { StaffsUserViewComponent } from '../../users/management/staffs-user-view/staffs-user-view.component';
@@ -27,7 +22,6 @@ import { ProductsEditComponent } from '../../products/products-edit/products-edi
 import { ProductsListComponent } from '../../products/products-list/products-list.component';
 import { ProductsCreateComponent } from '../../products/products-create/products-create.component';
 import { ProductsViewComponent } from '../../products/products-view/products-view.component';
-import { ProductsDeleteComponent } from '../../products/products-delete/products-delete.component';
 import { AuthGuard } from 'src/app/guards/auth.guard';
 import { SubscriptionsListComponent } from '../../subsciptions/subscriptions-list/subscriptions-list.component';
 import { SubscriptionsViewComponent } from '../../subsciptions/subscriptions-view/subscriptions-view.component';
@@ -74,11 +68,6 @@ const adminRouter: Routes = [
         path: 'packages-view',
         component: PackagesViewComponent,
       },
-      // investment-route
-      {
-        path: 'investments-create',
-        component: InvestmentsCreateComponent,
-      },
       {
         path: 'investments-list',
         component: InvestmentsListComponent,
@@ -86,10 +75,6 @@ const adminRouter: Routes = [
       {
         path: 'investments-edit',
         component: InvestmentsEditComponent,
-      },
-      {
-        path: 'investments-delete',
-        component: InvestmentsDeleteComponent,
       },
       {
         path: 'investments-view',
@@ -101,20 +86,8 @@ const adminRouter: Routes = [
         component: ClientsUserListComponent,
       },
       {
-        path: 'clients-user-create',
-        component: ClientsUserCreateComponent,
-      },
-      {
-        path: 'clients-user-edit',
-        component: ClientsUserEditComponent,
-      },
-      {
         path: 'customers-view/:id',
         component: ClientsUserViewComponent,
-      },
-      {
-        path: 'clients-user-delete',
-        component: ClientsUserDeleteComponent,
       },
       // staff-users-route
       {
@@ -157,10 +130,6 @@ const adminRouter: Routes = [
       {
         path: 'products-view/:id',
         component: ProductsViewComponent,
-      },
-      {
-        path: 'products-delete',
-        component: ProductsDeleteComponent,
       },
       {
         path: 'orders-list',

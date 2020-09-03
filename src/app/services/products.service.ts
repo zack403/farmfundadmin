@@ -20,7 +20,6 @@ export class ProductsService {
       }))
     }
 
-    @Cacheable()
     GetProducts(page, size, search) {
       return this.httpSvc.get(`foodmarket?page=${page}&size=${size}&search=${search}`).pipe(tap(res => {
         return res;
