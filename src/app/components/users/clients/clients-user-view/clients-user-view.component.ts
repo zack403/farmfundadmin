@@ -11,6 +11,8 @@ export class ClientsUserViewComponent implements OnInit {
   customer: any;
   details: any;
   showDetails: boolean = false;
+  total: number;
+  totalAmount: Array<any> = [];
 
 
 
@@ -32,7 +34,15 @@ export class ClientsUserViewComponent implements OnInit {
       if(item){
         this.showDetails = true;
         this.details = item.PurchaseDetails;
+        for (const {price} of this.details) {
+          this.totalAmount.push(price);
+        }
+        this.total = this.totalAmount.reduce(this.sumTotal);
       }
+  }
+
+  sumTotal(total, num) {
+    return total + num;
   }
 
   back() {
