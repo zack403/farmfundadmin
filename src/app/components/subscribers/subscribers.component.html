@@ -56,7 +56,7 @@
                                             <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
                                             <td class="text-right">{{item?.roc | currency: '&#8358; '}}</td>
                                             <td class="">{{item?.paymentType}}</td>
-                                            <td class=""><a *ngIf="item.proofOfPayment && item.status === 'Pending'" download href="{{imagePath}}/{{item?.proofOfPayment}}">View</a>
+                                            <td class=""><a *ngIf="item.proofOfPayment && item.status === 'Pending'" download href="{{item?.proofOfPayment}}">View</a>
                                             </td>
                                             <td class="">{{item?.startDate | date: "mediumDate"}}</td>
                                             <td class="">{{item?.endDate | date: "mediumDate"}}</td>
