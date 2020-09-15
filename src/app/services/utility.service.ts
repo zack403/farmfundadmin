@@ -29,7 +29,13 @@ export class UtilityService {
     }))
   }
 
-  PutSingle(route, id) {
+  PutSingle(route, id, subid) {
+    return this.httpSvc.put(`${route}/` + id + '/' + subid, {}).pipe(tap(res => {
+      return res;
+    }))
+  }
+
+  activateSubscriber(route, id) {
     return this.httpSvc.put(`${route}/` + id, {}).pipe(tap(res => {
       return res;
     }))

@@ -35,7 +35,7 @@ export class SubscriptionsListComponent implements OnInit {
     this.getPartners();
   }
 
-  markAsDelivered(id) {
+  markAsDelivered(id, subid) {
     Swal.fire({
       title: 'Are you sure?',
       text: 'This process is irreversible.',
@@ -49,7 +49,7 @@ export class SubscriptionsListComponent implements OnInit {
       closeOnCancel: true
     }).then((result) => {
       if(result.value) {
-        this.utilSvc.PutSingle('purchase/markasdelivered', id).subscribe((res: any) => {
+        this.utilSvc.PutSingle('purchase/markasdelivered', id, subid).subscribe((res: any) => {
           if(res.data){
             this.toastr.Success(res.data);
             this.getPartners();
@@ -91,5 +91,7 @@ export class SubscriptionsListComponent implements OnInit {
   refresh() {
     this.getPartners();
   }
+
+ 
 
 }

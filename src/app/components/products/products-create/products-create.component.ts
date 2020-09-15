@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./products-create.component.css']
 })
 export class ProductsCreateComponent implements OnInit {
-  productData: any = {};
+  productData: any = {
+    productName: '',
+    price: ''
+  };
   constructor(private toastr: ToasterService, private prodSvc: ProductsService, private router: Router) { }
 
   ngOnInit() {
@@ -17,8 +20,9 @@ export class ProductsCreateComponent implements OnInit {
 
   OnfileChanged(event) {
     const files = event.target.files;
-    this.productData.imageUrl = files[0];
-    if (!this.productData.imageUrl.type.match(/image.*/)) return this.toastr.Error('Sorry, only images are allowed');
+    const f = files[0];
+    if (!f.type.match(/image.*/)) return this.toastr.Error('Sorry, only images are allowed');
+    this.productData.imageUrl = f;
   }
 
   save() {

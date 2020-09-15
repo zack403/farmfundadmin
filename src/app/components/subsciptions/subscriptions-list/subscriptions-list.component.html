@@ -58,7 +58,7 @@
                                                     class="btn btn-outline-warning"><i class="fa fa-pencil"></i>
                                                     </a>
                                                 &nbsp;
-                                                <button title="Mark as delivered" *ngIf="item.status === 'Pending'" (click)="markAsDelivered(item.id)"
+                                                <button title="Mark as delivered" *ngIf="item.status === 'Pending'" (click)="markAsDelivered(item.id, item.SubscriberId)"
                                                     class="btn btn-outline-secondary"><i class="fa fa-check"></i>
                                                     </button>
                                                 &nbsp;

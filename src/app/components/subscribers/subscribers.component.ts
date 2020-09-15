@@ -51,7 +51,7 @@ export class SubscribersComponent implements OnInit {
       closeOnCancel: true
     }).then((result) => {
       if(result.value) {
-        this.utilSvc.PutSingle('utility/activatesubscriber', id).subscribe((res: any) => {
+        this.utilSvc.activateSubscriber('utility/activatesubscriber', id).subscribe((res: any) => {
           if(res.data){
             this.toastr.Success(res.data);
             this.getSubscribers();
