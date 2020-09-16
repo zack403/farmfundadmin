@@ -25,7 +25,6 @@ export class ProductsViewComponent implements OnInit {
       }else {
         this.product.imageUrl =`${this.apiUrl}/${this.product.imageUrl}`;
       }
-      console.log(this.product);
     })
   }
 

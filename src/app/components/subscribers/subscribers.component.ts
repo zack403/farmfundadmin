@@ -27,7 +27,6 @@ export class SubscribersComponent implements OnInit {
   getSubscribers() {
     this.utilSvc.Get('utility/getsubscribers', this.page, this.size, this.search).subscribe((res: any) => {
       this.subscribers = res;
-      console.log(this.subscribers);
       if(res.data.length === 0) return this.toastr.Info("No Record found");  
     })
   }

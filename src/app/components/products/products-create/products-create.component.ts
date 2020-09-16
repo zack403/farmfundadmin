@@ -13,6 +13,7 @@ export class ProductsCreateComponent implements OnInit {
     productName: '',
     price: ''
   };
+  isBusy: boolean = false;
   constructor(private toastr: ToasterService, private prodSvc: ProductsService, private router: Router) { }
 
   ngOnInit() {
@@ -26,16 +27,18 @@ export class ProductsCreateComponent implements OnInit {
   }
 
   save() {
+    this.isBusy = true;
     const formData = new FormData();
     formData.append('image', this.productData.imageUrl);
     formData.append('productName', this.productData.productName);
     formData.append('price', this.productData.price);
 
     this.prodSvc.CreateProduct(formData).subscribe((res: any) => {
-      console.log(res);
       this.toastr.Success(res.message);
+      this.isBusy = false;
       this.router.navigateByUrl("admin/products-list");
     }, err => {
+      this.isBusy = false;
       console.log(err);
     })
   }
