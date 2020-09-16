@@ -33,7 +33,7 @@
                                     </div>
                                     
                                 </div>
-                                <a (click)="save()" class="float-right btn btn-outline btn-lg  m-b-5 m-t-5"><i class="fa fa-floppy-o"></i> Save</a>
+                                <button [disabled]="isBusy" (click)="save()" class="float-right btn btn-outline btn-lg  m-b-5 m-t-5"><i class="fa fa-floppy-o"></i> Save</button>
                             </form>
                         </div>
                     </div>

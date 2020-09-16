@@ -35,10 +35,10 @@
                                                 <th>Created At</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
-                                        <tr *ngFor="let item of products.data | paginate : {
+                                        <tr *ngFor="let item of products?.data | paginate : {
                                                     itemsPerPage: size,
                                                     currentPage: page,
-                                                    totalItems: products.totalItems
+                                                    totalItems: products?.totalItems
                                                 }; let i = index">
                                             <td class="align-middle text-center">{{i + 1}}</td>
                                             <td class="">{{item?.productName}}</td>
@@ -61,7 +61,7 @@
                                
                             </div>
                         </div>
-                        <div *ngIf="products.data.length > 0" >
+                        <div *ngIf="products?.data.length > 0" >
                             <pagination-controls
                             class="my-pagination"
                                 previousLabel="Prev"
