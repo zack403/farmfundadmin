@@ -37,11 +37,12 @@ import { ToasterService } from './services/toaster.service';
 import { AuthGuard } from './guards/auth.guard';
 import { ErrorInterceptor } from './interceptor/error.interceptor';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { SubscribersComponent } from './components/subscribers/subscribers.component'; 
+import { SubscribersComponent } from './components/subscribers/subscribers.component';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 // for Router import:
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { SubscriptionsEditComponent } from './components/subsciptions/subscriptions-edit/subscriptions-edit.component';
 
 
 export function tokenGetter() {
@@ -76,6 +77,7 @@ export function tokenGetter() {
     SubscriptionsListComponent,
     SubscriptionsViewComponent,
     SubscribersComponent,
+    SubscriptionsEditComponent,
   ],
   imports: [
     BrowserModule,

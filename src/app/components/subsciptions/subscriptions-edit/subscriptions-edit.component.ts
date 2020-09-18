@@ -35,7 +35,7 @@ export class SubscriptionsEditComponent implements OnInit {
       confirmButtonText: 'Edit'
     }).then((result) => {
       if(result.value) {
-        this.partner.PurchaseDetails[index].amount = result.value;
+        this.partner.PurchaseDetails[index].price = result.value;
       }
     })
   }
@@ -54,7 +54,7 @@ export class SubscriptionsEditComponent implements OnInit {
       closeOnCancel: true
     }).then((result) => {
       if(result.value) {
-        this.partner.PurchaseDetails.splice(index, 1);    
+        this.partner.PurchaseDetails.splice(index, 1);
       }
     })
   }
