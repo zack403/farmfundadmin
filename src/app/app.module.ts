@@ -43,6 +43,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 // for Router import:
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { SubscriptionsEditComponent } from './components/subsciptions/subscriptions-edit/subscriptions-edit.component';
+import { MigrationComponent } from './components/migration/migration.component';
 
 
 export function tokenGetter() {
@@ -78,6 +79,7 @@ export function tokenGetter() {
     SubscriptionsViewComponent,
     SubscribersComponent,
     SubscriptionsEditComponent,
+    MigrationComponent,
   ],
   imports: [
     BrowserModule,

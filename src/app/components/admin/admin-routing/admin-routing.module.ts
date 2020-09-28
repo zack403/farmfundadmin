@@ -1,3 +1,4 @@
+import { MigrationComponent } from './../../migration/migration.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -146,6 +147,10 @@ const adminRouter: Routes = [
       {
         path: 'farmify-market-subscribers',
         component: SubscribersComponent,
+      },
+      {
+        path: 'migration',
+        component: MigrationComponent,
       },
     ]
   },
