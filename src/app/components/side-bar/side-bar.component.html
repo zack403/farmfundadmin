@@ -1,52 +1,108 @@
 <aside class="app-sidebar">
-    <div class="app-sidebar__user">
-        <div class="dropdown">
-            <a class="nav-link pl-2 pr-2 leading-none d-flex" data-toggle="dropdown" href="#">
-                <img alt="image" src="{{photo ? photo : 'assets/img/avat.png'}}"  class=" avatar-md rounded-circle">
-                <span class="ml-2 d-lg-block">
-                    <span class="text-white app-sidebar__user-name mt-5">{{user?.firstName}} {{user?.lastName}}</span><br>
-                    <span class="text-muted app-sidebar__user-name text-sm"> {{user?.email}}</span>
-                </span>
-            </a>
-        </div>
+  <div class="app-sidebar__user">
+    <div class="dropdown">
+      <a
+        class="nav-link pl-2 pr-2 leading-none d-flex"
+        data-toggle="dropdown"
+        href="#"
+      >
+        <img
+          alt="image"
+          src="{{ photo ? photo : 'assets/img/avat.png' }}"
+          class="avatar-md rounded-circle"
+        />
+        <span class="ml-2 d-lg-block">
+          <span class="text-white app-sidebar__user-name mt-5"
+            >{{ user?.firstName }} {{ user?.lastName }}</span
+          ><br />
+          <span class="text-muted app-sidebar__user-name text-sm">
+            {{ user?.email }}</span
+          >
+        </span>
+      </a>
     </div>
-    <ul class="side-menu">
-        <li class="slide">
-            <a class="side-menu__item"  data-toggle="slide" [routerLink]="['/admin/dashboard']"><i class="side-menu__icon fa fa-desktop"></i><span class="side-menu__label">Dashboard</span><i class="angle fa fa-angle-right"></i></a>
-            <!-- <ul class="slide-menu">
+  </div>
+  <ul class="side-menu">
+    <li class="slide">
+      <a
+        class="side-menu__item"
+        data-toggle="slide"
+        [routerLink]="['/admin/dashboard']"
+        ><i class="side-menu__icon fa fa-desktop"></i
+        ><span class="side-menu__label">Dashboard</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <!-- <ul class="slide-menu">
                 <li><a class="slide-item"><span>Sales Dashboard</span></a></li>
                 <li><a class="slide-item"><span>Finance Dashboard</span></a></li>
                 <li><a class="slide-item"><span>Marketing Dashboard</span></a></li>
                 <li><a class="slide-item"><span>Social Dashboard</span></a></li>
                 <li><a class="slide-item"><span>HR Dashboard</span></a></li>
             </ul> -->
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/products-list']"
+        ><i class="side-menu__icon fa fa-cube"></i
+        ><span class="side-menu__label">Products</span></a
+      >
+    </li>
+    <li>
+      <a
+        class="side-menu__item"
+        [routerLink]="['/admin/farmify-market-subscribers']"
+        ><i class="side-menu__icon fa fa-group"></i
+        ><span class="side-menu__label">Farmify Subscribers</span></a
+      >
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/orders-list']"
+        ><i class="side-menu__icon fa fa-shopping-cart"></i
+        ><span class="side-menu__label">Farmify Orders</span></a
+      >
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/packages-list']"
+        ><i class="side-menu__icon fa fa-cubes"></i
+        ><span class="side-menu__label">Farm Packages</span></a
+      >
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/investments-list']"
+        ><i class="side-menu__icon fa fa-bar-chart"></i
+        ><span class="side-menu__label">Farm Investments</span></a
+      >
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/customers-list']"
+        ><i class="side-menu__icon fa fa-group"></i
+        ><span class="side-menu__label">Customers</span></a
+      >
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-pie-chart"></i
+        ><span class="side-menu__label">Management</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a [routerLink]="['/admin/staffs-user-list']" class="slide-item"
+            >Staffs</a
+          >
         </li>
         <li>
-            <a class="side-menu__item" [routerLink]="['/admin/products-list']"><i class="side-menu__icon fa fa-cube"></i><span class="side-menu__label">Products</span></a>
+          <a class="side-menu__item" [routerLink]="['/admin/migration']"
+            ><i class="side-menu__icon fa fa-upload"></i
+            ><span class="side-menu__label">Migration</span></a
+          >
         </li>
-        <li>
-            <a class="side-menu__item" [routerLink]="['/admin/farmify-market-subscribers']"><i class="side-menu__icon fa fa-group"></i><span class="side-menu__label">Farmify Subscribers</span></a>
-        </li>
-        <li>
-            <a class="side-menu__item" [routerLink]="['/admin/orders-list']"><i class="side-menu__icon fa fa-shopping-cart"></i><span class="side-menu__label">Farmify Orders</span></a>
-        </li>
-        <li>
-            <a class="side-menu__item" [routerLink]="['/admin/packages-list']"><i class="side-menu__icon fa fa-cubes"></i><span class="side-menu__label">Farm Packages</span></a>
-        </li>
-        <li>
-            <a class="side-menu__item" [routerLink]="['/admin/investments-list']"><i class="side-menu__icon fa fa-bar-chart"></i><span class="side-menu__label">Farm Investments</span></a>
-        </li>
-        <li>
-            <a class="side-menu__item" [routerLink]="['/admin/customers-list']"><i class="side-menu__icon fa fa-group"></i><span class="side-menu__label">Customers</span></a>
-        </li>
-        <li class="slide">
-            <a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-pie-chart"></i><span class="side-menu__label">Management</span><i class="angle fa fa-angle-right"></i></a>
-            <ul class="slide-menu">
-                <li><a [routerLink]="['/admin/staffs-user-list']" class="slide-item">Staffs</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="side-menu__item" [routerLink]="['/login']" ><i class="side-menu__icon fa fa-sign-out"></i><span class="side-menu__label">Log Out</span></a>
-        </li>
-    </ul>
+      </ul>
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/login']"
+        ><i class="side-menu__icon fa fa-sign-out"></i
+        ><span class="side-menu__label">Log Out</span></a
+      >
+    </li>
+  </ul>
 </aside>
