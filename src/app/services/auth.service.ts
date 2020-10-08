@@ -51,5 +51,12 @@ export class AuthService {
           return this.currentUser = null;
       }
     }
+
+    changePassword(model: any) {
+      return this.httpService.post('auth/change-password', model)
+        .pipe(tap(async (res: any) => {                    
+            return res;    
+      }));
+    }
   
 }
