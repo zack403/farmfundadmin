@@ -44,6 +44,10 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { SubscriptionsEditComponent } from './components/subsciptions/subscriptions-edit/subscriptions-edit.component';
 import { MigrationComponent } from './components/migration/migration.component';
+import { InvestorsDeleteComponent } from './components/investors/investors-delete/investors-delete.component';
+import { InvestorsEditComponent } from './components/investors/investors-edit/investors-edit.component';
+import { InvestorsListComponent } from './components/investors/investors-list/investors-list.component';
+import { InvestorsViewComponent } from './components/investors/investors-view/investors-view.component';
 
 
 export function tokenGetter() {
@@ -80,6 +84,10 @@ export function tokenGetter() {
     SubscribersComponent,
     SubscriptionsEditComponent,
     MigrationComponent,
+    InvestorsDeleteComponent,
+    InvestorsEditComponent,
+    InvestorsListComponent,
+    InvestorsViewComponent,
   ],
   imports: [
     BrowserModule,

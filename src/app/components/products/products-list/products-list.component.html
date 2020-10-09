@@ -5,7 +5,7 @@
             <li class="breadcrumb-item active" aria-current="page">Products</li>
         </ol>
         <a [routerLink]="['/admin/products-create']" class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"><i class="fe fe-plus-square"></i> Create</a>
-       
+
         <div class="section-body ">
 
             <div class="row">
@@ -22,7 +22,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <h4>PRODUCTS LIST ({{products?.totalItems}})</h4>
+                            <h4>PRODUCTS ({{products?.totalItems}})</h4>
                         </div>
                         <div class="card-body">
                             <div class="e-table">
@@ -55,10 +55,10 @@
                                                 <button (click)="delete(item.id)" class="btn btn-outline-danger" ><i class="fe fe-trash-2"></i></button>
                                             </td>
                                         </tr>
-                                       
+
                                     </table>
                                 </div>
-                               
+
                             </div>
                         </div>
                         <div *ngIf="products?.data.length > 0" >

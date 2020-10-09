@@ -41,26 +41,6 @@
             </ul> -->
     </li>
     <li>
-      <a class="side-menu__item" [routerLink]="['/admin/products-list']"
-        ><i class="side-menu__icon fa fa-cube"></i
-        ><span class="side-menu__label">Products</span></a
-      >
-    </li>
-    <li>
-      <a
-        class="side-menu__item"
-        [routerLink]="['/admin/farmify-market-subscribers']"
-        ><i class="side-menu__icon fa fa-group"></i
-        ><span class="side-menu__label">Farmify Subscribers</span></a
-      >
-    </li>
-    <li>
-      <a class="side-menu__item" [routerLink]="['/admin/orders-list']"
-        ><i class="side-menu__icon fa fa-shopping-cart"></i
-        ><span class="side-menu__label">Farmify Orders</span></a
-      >
-    </li>
-    <li>
       <a class="side-menu__item" [routerLink]="['/admin/packages-list']"
         ><i class="side-menu__icon fa fa-cubes"></i
         ><span class="side-menu__label">Farm Packages</span></a
@@ -70,6 +50,32 @@
       <a class="side-menu__item" [routerLink]="['/admin/investments-list']"
         ><i class="side-menu__icon fa fa-bar-chart"></i
         ><span class="side-menu__label">Farm Investments</span></a
+      >
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/investors-list']"
+        ><i class="side-menu__icon fa fa-group"></i
+        ><span class="side-menu__label">Farm Investors</span></a
+      >
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/products-list']"
+        ><i class="side-menu__icon fa fa-cube"></i
+        ><span class="side-menu__label">Food Bank Products</span></a
+      >
+    </li>
+    <li>
+      <a
+        class="side-menu__item"
+        [routerLink]="['/admin/farmify-market-subscribers']"
+        ><i class="side-menu__icon fa fa-group"></i
+        ><span class="side-menu__label">Food Bank Subscribers</span></a
+      >
+    </li>
+    <li>
+      <a class="side-menu__item" [routerLink]="['/admin/orders-list']"
+        ><i class="side-menu__icon fa fa-shopping-cart"></i
+        ><span class="side-menu__label">Food Bank Orders</span></a
       >
     </li>
     <li>
@@ -86,8 +92,9 @@
       ></a>
       <ul class="slide-menu">
         <li>
-          <a [routerLink]="['/admin/staffs-user-list']" class="slide-item"
-            >Staffs</a
+          <a class="side-menu__item" [routerLink]="['/admin/staffs-user-list']"
+            ><i class="side-menu__icon fa fa-users"></i
+            ><span class="side-menu__label">Staffs</span></a
           >
         </li>
         <li>

@@ -1,96 +1,103 @@
 <div class="app-content">
-    <section class="section">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">View</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Customer</li>
-        </ol>
-        <a [routerLink]="['/admin/customers-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
-            <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
-        </a>
+  <section class="section">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">View</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Customer</li>
+    </ol>
+    <a [routerLink]="['/admin/customers-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+      <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
+    </a>
 
-        <div class="section-body">
+    <div class="section-body">
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Farmify Customer ({{customer.firstName}} {{customer.middleName}} {{customer.lastName}})</h4>
-                        </div>
-                        <div class="card-body">
-                            <form method="post">
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label for="farmname">First Name</label>
-                                        <input type="text" id="firstname" name="firstname" [(ngModel)]="customer.firstName" class="form-control" placeholder="" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="lastname">Last Name</label>
-                                        <input type="text" id="lastname" name="lastname" [(ngModel)]="customer.lastName"  class="form-control" placeholder="" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="othername">Middle Name</label>
-                                        <input type="text" id="othername" name="othername"  [(ngModel)]="customer.middleName" class="form-control" placeholder="" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="phone">Phone No.</label>
-                                        <input type="text" id="phone" name="phone" [(ngModel)]="customer.phoneNo" class="form-control" placeholder="" readonly
-                                            readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="email">Email</label>
-                                        <input type="text" id="email" name="email" [(ngModel)]="customer.email" class="form-control" placeholder="" readonly>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="bankname">Bank Name</label>
-                                        <input type="text" id="bankname" name="bankName" [(ngModel)]="customer.bankName" class="form-control" placeholder="" readonly>
-                                    </div>
-                                   
-                                    <div class="form-group col-md-4">
-                                        <label for="acctno">Acct No </label>
-                                        <input type="text" id="acctno" name="acctno" [(ngModel)]="customer.acctNo"  class="form-control" placeholder="" readonly>
-                                    </div>
-                                   
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4> Farmify Subscriptions count: {{customer.Subscribers.length}}</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="e-table">
-                                <div class="table-responsive table-lg">
-                                    <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
-                                        <tr>
-                                            <th class="text-center">S/N</th>
-                                            <th>Subscription Amount</th>
-                                            <th>Unit</th>
-                                            <th>Roi</th>
-                                            <th>Roc</th>
-                                            <th>Payment Type </th>
-                                            <th>Start Date</th>
-                                            <th>End Date</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        <tr *ngFor="let item of customer.Subscribers; let i = index">
-                                            <td class="">{{i + 1}}</td>
-                                            <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
-                                            <td class="">{{item?.unit}}</td>
-                                            <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
-                                            <td class="text-right">{{item?.roc | currency: '&#8358; '}}</td>
-                                            <td class="">{{item?.paymentType}}</td>
-                                            <td class="">{{item?.startDate | date: "mediumDate"}}</td>
-                                            <td class="">{{item?.endDate | date: "mediumDate"}}</td>
-                                            <td><label
-                                                [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label></td>
-                                            
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div >
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Food Bank Customer ({{customer.firstName}} {{customer.middleName}} {{customer.lastName}})</h4>
+            </div>
+            <div class="card-body">
+              <form method="post">
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label for="farmname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" [(ngModel)]="customer.firstName"
+                      class="form-control" placeholder="" readonly>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" [(ngModel)]="customer.lastName"
+                      class="form-control" placeholder="" readonly>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="othername">Middle Name</label>
+                    <input type="text" id="othername" name="othername" [(ngModel)]="customer.middleName"
+                      class="form-control" placeholder="" readonly>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="phone">Phone No.</label>
+                    <input type="text" id="phone" name="phone" [(ngModel)]="customer.phoneNo" class="form-control"
+                      placeholder="" readonly readonly>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" [(ngModel)]="customer.email" class="form-control"
+                      placeholder="" readonly>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="bankname">Bank Name</label>
+                    <input type="text" id="bankname" name="bankName" [(ngModel)]="customer.bankName"
+                      class="form-control" placeholder="" readonly>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <label for="acctno">Acct No </label>
+                    <input type="text" id="acctno" name="acctno" [(ngModel)]="customer.acctNo" class="form-control"
+                      placeholder="" readonly>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4> Food Bank Subscriptions count: {{customer.Subscribers.length}}</h4>
+            </div>
+            <div class="card-body">
+              <div class="e-table">
+                <div class="table-responsive table-lg">
+                  <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
+                    <tr>
+                      <th class="text-center">S/N</th>
+                      <th>Subscription Amount</th>
+                      <th>Unit</th>
+                      <th>Roi</th>
+                      <th>Roc</th>
+                      <th>Payment Type </th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr *ngFor="let item of customer.Subscribers; let i = index">
+                      <td class="">{{i + 1}}</td>
+                      <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
+                      <td class="">{{item?.unit}}</td>
+                      <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
+                      <td class="text-right">{{item?.roc | currency: '&#8358; '}}</td>
+                      <td class="">{{item?.paymentType}}</td>
+                      <td class="">{{item?.startDate | date: "mediumDate"}}</td>
+                      <td class="">{{item?.endDate | date: "mediumDate"}}</td>
+                      <td><label
+                          [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label>
+                      </td>
+
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- <div >
                             <pagination-controls
                             class="my-pagination"
                                 previousLabel="Prev"
@@ -99,93 +106,91 @@
                                 (pageChange)="handlePageChange($event)">
                             </pagination-controls>
                         </div> -->
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Farmify Orders count: {{customer.Purchases.length}}</h4>
-                        </div>
-                        <div class="card-body">
-                            <span *ngIf="showDetails" class="pull-right">
-                                <a title="View parent" class="text-primary detail"
-                                    (click)="back()"><i class="fa fa-arrow-left">
-                                        Back</i></a>
-                            </span>
-                            <div class="e-table">
-                                <div class="table-responsive table-lg">
-                                    <table *ngIf="!showDetails" class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
-                                        <tr>
-                                            <th class="text-center">S/N</th>
-                                            <th>Name</th>
-                                            <th>Phone No</th>
-                                            <th >Type</th>
-                                            <th>Order Date</th>
-                                            <th>Status</th>
-                                            <th>Delivered Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        <tr
-                                            *ngFor="let i of customer.Purchases; let index = index">
-                                            <td class="">{{index + 1}}</td>
-                                            <td class="">{{i.name}}</td>
-                                            <td class="">{{i.phoneNo}}</td>
-                                            <td class="">{{i.type}}</td>
-                                            <td class="">{{i.createdAt | date: "mediumDate"}}
-                                            </td>
-                                            <td class=""><span
-                                                    [ngClass]="{'badge badge-success badge-pill': i.status === 'Delivered', 'badge badge-warning': i.status === 'Pending'}">{{i.status}}</span>
-                                            </td>
-                                            <td class="">{{i.deliveredDate | date: "mediumDate"}}
-                                            <td>
-                                                <button title="View Order detail"
-                                                    (click)="viewOrder(i.id)"
-                                                    class="btn btn-outline-success"><i
-                                                        class="fa fa-eye"></i>
-                                                </button>
-                                            </td>
-
-                                        </tr>
-                                </table>
-                                <table *ngIf="showDetails" class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
-                                        <tr>
-                                            <th class="">S/N</th>
-                                            <th>Product</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-                                        </tr>
-                                        <tr
-                                            *ngFor="let detail of details; let index = index">
-                                            <td class="">{{index + 1}}</td>
-                                            <td class="">{{detail.productName}}</td>
-                                            <td class="text-right">
-                                                {{detail.price | currency: '&#8358; '}}
-                                            </td>
-                                            <td class="">{{detail.unit}}</td>
-
-                                        </tr>
-                                        
-                                            <tr>
-                                                <th style="background-color: white;" class=""></th>
-                                                <th style="background-color: white; color: black;" class="">Total</th>
-                                                <th style="background-color: white; color: black;" class="text-right">{{total | currency: '&#8358; '}}</th>
-                                                <th style="background-color: white;" class=""></th>
-                                            </tr>
-                                        
-                                </table>
-                                </div>        
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Farm Investments</h4>
-                        </div>
-                        <div class="card-body">
-                            
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Food Bank Orders count: {{customer.Purchases.length}}</h4>
             </div>
-        </div>
+            <div class="card-body">
+              <span *ngIf="showDetails" class="pull-right">
+                <a title="View parent" class="text-primary detail" (click)="back()"><i class="fa fa-arrow-left">
+                    Back</i></a>
+              </span>
+              <div class="e-table">
+                <div class="table-responsive table-lg">
+                  <table *ngIf="!showDetails"
+                    class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
+                    <tr>
+                      <th class="text-center">S/N</th>
+                      <th>Name</th>
+                      <th>Phone No</th>
+                      <th>Type</th>
+                      <th>Order Date</th>
+                      <th>Delivered Date</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                    <tr *ngFor="let i of customer.Purchases; let index = index">
+                      <td class="">{{index + 1}}</td>
+                      <td class="">{{i.name}}</td>
+                      <td class="">{{i.phoneNo}}</td>
+                      <td class="">{{i.type}}</td>
+                      <td class="">{{i.createdAt | date: "mediumDate"}}
+                      </td>
+                      <td class="">{{i.deliveredDate | date: "mediumDate"}}</td>
 
-    </section>
+                      <td><label
+                          [ngClass]="{'badge badge-success badge-pill': i.status === 'Delivered', 'badge badge-warning': i.status === 'Pending'}">{{i.status}}</label>
+                      </td>
+                      <td>
+                        <button title="View Order detail" (click)="viewOrder(i.id)" class="btn btn-outline-success"><i
+                            class="fa fa-eye"></i>
+                        </button>
+                      </td>
+
+                    </tr>
+                  </table>
+                  <table *ngIf="showDetails" class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
+                    <tr>
+                      <th class="">S/N</th>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                    </tr>
+                    <tr *ngFor="let detail of details; let index = index">
+                      <td class="">{{index + 1}}</td>
+                      <td class="">{{detail.productName}}</td>
+                      <td class="text-right">
+                        {{detail.price | currency: '&#8358; '}}
+                      </td>
+                      <td class="">{{detail.unit}}</td>
+
+                    </tr>
+
+                    <tr>
+                      <th style="background-color: white;" class=""></th>
+                      <th style="background-color: white; color: black;" class="">Total</th>
+                      <th style="background-color: white; color: black;" class="text-right">
+                        {{total | currency: '&#8358; '}}</th>
+                      <th style="background-color: white;" class=""></th>
+                    </tr>
+
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Farm Investments</h4>
+            </div>
+            <div class="card-body">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
 </div>

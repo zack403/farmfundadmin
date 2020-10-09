@@ -1,3 +1,7 @@
+import { InvestorsListComponent } from './../../investors/investors-list/investors-list.component';
+import { InvestorsViewComponent } from './../../investors/investors-view/investors-view.component';
+import { InvestorsEditComponent } from './../../investors/investors-edit/investors-edit.component';
+import { InvestorsDeleteComponent } from './../../investors/investors-delete/investors-delete.component';
 import { MigrationComponent } from './../../migration/migration.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -151,6 +155,22 @@ const adminRouter: Routes = [
       {
         path: 'migration',
         component: MigrationComponent,
+      },
+      {
+        path: 'investors-delete',
+        component: InvestorsDeleteComponent,
+      },
+      {
+        path: 'investors-edit',
+        component: InvestorsEditComponent,
+      },
+      {
+        path: 'investors-list',
+        component: InvestorsListComponent,
+      },
+      {
+        path: 'investors-view',
+        component: InvestorsViewComponent,
       },
     ]
   },

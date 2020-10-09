@@ -1,1 +1,67 @@
-<p>investments-edit works!</p>
+<div class="app-content">
+  <section class="section">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Edit</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Farm Investment</li>
+      </ol>
+      <a [routerLink]="['/admin/investments-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+          <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
+      </a>
+
+      <div class="section-body">
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4>FARM INVESTMENTS</h4>
+              </div>
+              <div class="card-body">
+                <form method="post">
+                  <div class="row">
+                    <div class="col-md-4 mb-5">
+                      <div class="form-group">
+                        <label for="packagename" class="">Package Name</label>
+                        <input type="text" id="packagename" class="form-control" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="units" class="">Units</label>
+                        <input type="text" id="units" class="form-control" placeholder="" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                      <div class="form-group">
+                        <label for="cycle">Cycle <small>(in days)</small></label>
+                        <input type="number" id="cycle" class="form-control" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="subscribers">Subscribers</label>
+                        <input type="text" id="subscribers" class="form-control" placeholder="" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                      <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" class="form-control" placeholder="" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="roi">ROI <small>(in %)</small></label>
+                        <input type="text" id="roi" class="form-control" placeholder="">
+                      </div>
+                      <div class="custom-checkbox custom-control">
+                        <input type="checkbox" id="status" data-checkboxes="mygroup" class="custom-control-input">
+                        <label for="status" class="custom-control-label">Status</label>
+                      </div>
+                      <a href="#" class="float-right btn btn-outline btn-lg btn-primary m-b-5 m-t-5"
+                        [routerLink]="['/admin/packages-list']"><i class="fa fa-floppy-o"></i> Save</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </section>
+</div>
