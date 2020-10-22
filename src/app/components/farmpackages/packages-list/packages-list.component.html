@@ -14,7 +14,7 @@
                             <div class="float-right">
                                 <form>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search">
+                                        <input type="text" (input)="onChange(search)" name="search" [(ngModel)]="search" class="form-control" placeholder="Search">
                                         <div class="input-group-btn">
                                             <button class="btn btn-primary"><i class="ion ion-search"></i></button>
                                         </div>
@@ -32,15 +32,46 @@
                                         <th>Unit Available</th>
                                         <th>Amount Per Unit</th>
                                         <th>ROI</th>
-                                        <th>Circle</th>
+                                        <th>Cycle</th>
                                         <th>Location</th>
                                         <th>Action</th>
                                     </tr>
-                                    <tr>
-                                    </tr>
+                                    <tr *ngFor="let item of packages?.data | paginate : {
+                                        itemsPerPage: size,
+                                        currentPage: page,
+                                        totalItems: packages?.totalItems
+                                    }; let i = index">
+                                <td class="align-middle text-center">{{i + 1}}</td>
+                                <td class="">{{item?.packageName}}</td>
+                                <td class="">{{item?.unit > 0 ? item?.unit : 'Sold Out'}}</td>
+                                <td class="text-right">{{item?.amountPerUnit  | currency: '&#8358; '}}</td>
+                                <td class="">{{item?.profit}}%</td>
+                                <td class="">{{item?.cycle}} Days</td>
+                                <td class="">{{item?.location}}</td>
+
+
+                                <td class="">
+                                    <a [routerLink]="['/admin/packages-view', item.id]"
+                                        class="btn btn-outline-success"><i class="fa fa-eye"></i></a>
+                                    &nbsp;
+                                    <a [routerLink]="['/admin/packages-edit', item.id]"
+                                        class="btn btn-outline-warning"><i class="fe fe-edit-2"></i></a>
+                                    &nbsp;
+                                    <button (click)="delete(item.id)" class="btn btn-outline-danger" ><i class="fe fe-trash-2"></i></button>
+                                </td>
+                            </tr>
                                 </table>
                             </div>
                         </div>
+                    </div>
+                    <div *ngIf="packages?.data.length > 0" >
+                        <pagination-controls
+                        class="my-pagination"
+                            previousLabel="Prev"
+                            nextLabel="Next"
+                            responsive="true"
+                            (pageChange)="handlePageChange($event)">
+                        </pagination-controls>
                     </div>
                 </div>
             </div>

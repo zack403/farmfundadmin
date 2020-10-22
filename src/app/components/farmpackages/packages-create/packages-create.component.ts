@@ -11,10 +11,11 @@ import { ToasterService } from 'src/app/services/toaster.service';
 export class PackagesCreateComponent implements OnInit {
   packageData: any = {
     packageName: '',
-    cycle: '',
-    unit: '',
+    cycle: 0,
+    unit: 0,
     amountPerUnit: '',
-    location: ''
+    location: '',
+    profit: 0
   };
   isBusy: boolean = false;
   constructor(private toastr: ToasterService, private pckSvc: PackagesService, private router: Router) { }
@@ -38,6 +39,8 @@ export class PackagesCreateComponent implements OnInit {
     formData.append('amountPerUnit', this.packageData.amountPerUnit);
     formData.append('cycle', this.packageData.cycle);
     formData.append('location', this.packageData.location);
+    formData.append('profit', this.packageData.profit);
+
 
 
     this.pckSvc.CreatePackages(formData).subscribe((res: any) => {

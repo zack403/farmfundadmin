@@ -40,4 +40,10 @@ export class UtilityService {
       return res;
     }))
   }
+
+  activateInvestment(route, id) {
+    return this.httpSvc.put(`${route}/` + id, {}).pipe(tap(res => {
+      return res;
+    }))
+  }
 }

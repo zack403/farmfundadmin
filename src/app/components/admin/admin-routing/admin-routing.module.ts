@@ -1,7 +1,3 @@
-import { InvestorsListComponent } from './../../investors/investors-list/investors-list.component';
-import { InvestorsViewComponent } from './../../investors/investors-view/investors-view.component';
-import { InvestorsEditComponent } from './../../investors/investors-edit/investors-edit.component';
-import { InvestorsDeleteComponent } from './../../investors/investors-delete/investors-delete.component';
 import { MigrationComponent } from './../../migration/migration.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,9 +9,6 @@ import { PackagesListComponent } from '../../farmpackages/packages-list/packages
 import { PackagesEditComponent } from '../../farmpackages/packages-edit/packages-edit.component';
 import { PackagesDeleteComponent } from '../../farmpackages/packages-delete/packages-delete.component';
 import { PackagesViewComponent } from '../../farmpackages/packages-view/packages-view.component';
-import { InvestmentsListComponent } from '../../investments/investments-list/investments-list.component';
-import { InvestmentsEditComponent } from '../../investments/investments-edit/investments-edit.component';
-import { InvestmentsViewComponent } from '../../investments/investments-view/investments-view.component';
 import { ClientsUserListComponent } from '../../users/clients/clients-user-list/clients-user-list.component';
 import { ClientsUserViewComponent } from '../../users/clients/clients-user-view/clients-user-view.component';
 import { StaffsUserListComponent } from '../../users/management/staffs-user-list/staffs-user-list.component';
@@ -32,6 +25,7 @@ import { SubscriptionsListComponent } from '../../subsciptions/subscriptions-lis
 import { SubscriptionsViewComponent } from '../../subsciptions/subscriptions-view/subscriptions-view.component';
 import { SubscriptionsEditComponent } from '../../subsciptions/subscriptions-edit/subscriptions-edit.component';
 import { SubscribersComponent } from '../../subscribers/subscribers.component';
+import { InvestmentsComponent } from '../../investments/investments.component';
 
 
 const adminRouter: Routes = [
@@ -62,7 +56,7 @@ const adminRouter: Routes = [
         component: PackagesListComponent,
       },
       {
-        path: 'packages-edit',
+        path: 'packages-edit/:id',
         component: PackagesEditComponent,
       },
       {
@@ -70,20 +64,8 @@ const adminRouter: Routes = [
         component: PackagesDeleteComponent,
       },
       {
-        path: 'packages-view',
+        path: 'packages-view/:id',
         component: PackagesViewComponent,
-      },
-      {
-        path: 'investments-list',
-        component: InvestmentsListComponent,
-      },
-      {
-        path: 'investments-edit',
-        component: InvestmentsEditComponent,
-      },
-      {
-        path: 'investments-view',
-        component: InvestmentsViewComponent,
       },
       // client-users-route
       {
@@ -153,25 +135,13 @@ const adminRouter: Routes = [
         component: SubscribersComponent,
       },
       {
+        path: 'investments',
+        component: InvestmentsComponent,
+      },
+      {
         path: 'migration',
         component: MigrationComponent,
-      },
-      {
-        path: 'investors-delete',
-        component: InvestorsDeleteComponent,
-      },
-      {
-        path: 'investors-edit',
-        component: InvestorsEditComponent,
-      },
-      {
-        path: 'investors-list',
-        component: InvestorsListComponent,
-      },
-      {
-        path: 'investors-view',
-        component: InvestorsViewComponent,
-      },
+      }
     ]
   },
   {path: '**', redirectTo: 'login'},

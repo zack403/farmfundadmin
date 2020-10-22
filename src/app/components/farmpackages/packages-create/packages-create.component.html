@@ -17,7 +17,7 @@
               <h4>FARM PACKAGES</h4>
             </div>
             <div class="card-body">
-              <form >
+              <form #packageForm="ngForm"  >
                 <div class="row">
                   <div class="col-md-4 mb-5">
                     <div class="form-group">
@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                       <label for="amountperunit"> Amount Per Unit</label>
-                      <input type="number" id="amountperunit" name="amountperunit" [(ngModel)]="packageData.amountPerUnit" class="form-control" placeholder="">
+                      <input type="text" id="amountperunit" name="amountperunit" [(ngModel)]="packageData.amountPerUnit" class="form-control" required placeholder="">
                     </div>
                     <div class="form-group">
                       <label for="location">Location</label>
@@ -41,14 +41,14 @@
                     </div>
                     <div class="form-group">
                       <label for="profit">ROI <small>(in %)</small></label>
-                      <input type="number" id="profit" name="profit" [(ngModel)]="packageData.profit" class="form-control" placeholder="">
+                      <input type="number" id="profit" name="profit" [(ngModel)]="packageData.profit" class="form-control" required placeholder="">
                     </div>
                   </div>
 
                   <div class="col-md-4 mb-5">
                     <div class="form-group">
                       <label for="unit">Unit Available</label>
-                      <input type="number" id="unit" name="unit" [(ngModel)]="packageData.unit" class="form-control" placeholder="" required required>
+                      <input type="number" id="unit" name="unit" [(ngModel)]="packageData.unit" class="form-control" placeholder=""  required>
                     </div>
                     <div class="form-group">
                       <label for="cycle">Cycle <small>(in days)</small></label>

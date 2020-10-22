@@ -22,41 +22,41 @@
                       <div class="col-md-4 mb-5">
                         <div class="form-group">
                           <label for="farm" class="">Farm Image</label>
-                          <input type="file" id="farmImg" class="form-control" placeholder="" required>
+                          <input type="file" (change)="OnfileChanged($event)" id="packageimage" class="form-control"  required>
                         </div>
                         <div class="form-group">
                           <label for="amountperunit"> Amount Per Unit</label>
-                          <input type="number" id="amountperunit" name="amountperunit" class="form-control" placeholder="">
+                          <input type="text" id="amountperunit" name="amountperunit" name="productname" [(ngModel)]="package.amountPerUnit" class="form-control" placeholder="">
                         </div>
                         <div class="form-group">
                           <label for="location">Location</label>
-                          <input type="text" id="location" class="form-control" placeholder="" required>
+                          <input type="text" id="location" name="location" name="location" [(ngModel)]="package.location" class="form-control" placeholder="" required>
                         </div>
                       </div>
 
                       <div class="col-md-4 mb-5">
                         <div class="form-group">
                           <label for="farmname">Package Name</label>
-                          <input type="text" id="farmname" class="form-control" placeholder="" required>
+                          <input type="text" id="packageName" name="packageName" [(ngModel)]="package.packageName" class="form-control" placeholder="" required>
                         </div>
                         <div class="form-group">
                           <label for="profit">ROI <small>(in %)</small></label>
-                          <input type="number" id="profit" class="form-control" placeholder="" required>
+                          <input type="number" id="profit" name="profit" [(ngModel)]="package.profit"  class="form-control" placeholder="" required>
                         </div>
                       </div>
 
                       <div class="col-md-4 mb-5">
                         <div class="form-group">
                           <label for="unit">Unit Available</label>
-                          <input type="number" id="unit" name="unit" class="form-control" placeholder="" required required>
+                          <input type="number" id="unit" name="unit" [(ngModel)]="package.unit" class="form-control" placeholder="" required required>
                         </div>
                         <div class="form-group">
                           <label for="cycle">Cycle <small>(in days)</small></label>
-                          <input type="number" id="cycle" class="form-control" placeholder="" required>
+                          <input type="number" id="cycle" name="cycle" [(ngModel)]="package.cycle"  class="form-control" placeholder="" required>
                         </div>
 
-                        <a href="#" class="float-right btn btn-outline btn-lg btn-primary m-b-5 m-t-5"
-                          [routerLink]="['/admin/packages-list']"><i class="fa fa-floppy-o"></i> Save</a>
+                        <a  class="float-right btn btn-outline btn-lg btn-primary m-b-5 m-t-5"
+                          (click)="save()" ><i class="fa fa-floppy-o"></i> Save</a>
                       </div>
                     </div>
                   </form>
