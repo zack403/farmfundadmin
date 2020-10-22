@@ -14,7 +14,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4>Food Bank Customer ({{customer.firstName}} {{customer.middleName}} {{customer.lastName}})</h4>
+              <h4>Food Bank Customer ({{customer?.firstName}} {{customer?.middleName}} {{customer?.lastName}})</h4>
             </div>
             <div class="card-body">
               <form method="post">
@@ -182,10 +182,40 @@
           </div>
           <div class="card">
             <div class="card-header">
-              <h4>Farm Investments</h4>
+              <h4>Farm Investments count: {{customer.Investments.length}}</h4>
             </div>
             <div class="card-body">
+              <div class="e-table">
+                <div class="table-responsive table-lg">
+                  <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
+                    <tr>
+                      <th class="text-center">S/N</th>
+                      <th> Investor</th>
+                      <th> Amount</th>
+                      <th>Unit</th>
+                      <th>Roi</th>
+                      <th>Payment Type </th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr *ngFor="let item of customer.Investments; let i = index">
+                      <td class="">{{i + 1}}</td>
+                      <td class="">{{item?.investor}}</td>
+                      <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
+                      <td class="">{{item?.unit}}</td>
+                      <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
+                      <td class="">{{item?.paymentType}}</td>
+                      <td class="">{{item?.startDate | date: "mediumDate"}}</td>
+                      <td class="">{{item?.endDate | date: "mediumDate"}}</td>
+                      <td><label
+                          [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label>
+                      </td>
 
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
