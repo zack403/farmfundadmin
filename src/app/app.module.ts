@@ -12,9 +12,6 @@ import { PackagesCreateComponent } from './components/farmpackages/packages-crea
 import { PackagesEditComponent } from './components/farmpackages/packages-edit/packages-edit.component';
 import { PackagesDeleteComponent } from './components/farmpackages/packages-delete/packages-delete.component';
 import { PackagesViewComponent } from './components/farmpackages/packages-view/packages-view.component';
-import { InvestmentsListComponent } from './components/investments/investments-list/investments-list.component';
-import { InvestmentsEditComponent } from './components/investments/investments-edit/investments-edit.component';
-import { InvestmentsViewComponent } from './components/investments/investments-view/investments-view.component';
 import { ClientsUserListComponent } from './components/users/clients/clients-user-list/clients-user-list.component';
 import { ClientsUserViewComponent } from './components/users/clients/clients-user-view/clients-user-view.component';
 import { StaffsUserListComponent } from './components/users/management/staffs-user-list/staffs-user-list.component';
@@ -44,7 +41,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { SubscriptionsEditComponent } from './components/subsciptions/subscriptions-edit/subscriptions-edit.component';
 import { MigrationComponent } from './components/migration/migration.component';
-
+import { InvestmentsComponent } from './components/investments/investments.component';
 
 export function tokenGetter() {
   return localStorage.getItem("adtoken");
@@ -61,9 +58,6 @@ export function tokenGetter() {
     PackagesEditComponent,
     PackagesDeleteComponent,
     PackagesViewComponent,
-    InvestmentsListComponent,
-    InvestmentsEditComponent,
-    InvestmentsViewComponent,
     ClientsUserListComponent,
     ClientsUserViewComponent,
     StaffsUserListComponent,
@@ -80,6 +74,7 @@ export function tokenGetter() {
     SubscribersComponent,
     SubscriptionsEditComponent,
     MigrationComponent,
+    InvestmentsComponent
   ],
   imports: [
     BrowserModule,

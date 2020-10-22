@@ -1,65 +1,69 @@
 <div class="app-content">
-    <section class="section">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Create</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Farm Packages</li>
-        </ol>
-        <a [routerLink]="['/admin/packages-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
-            <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
-        </a>
+  <section class="section">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Create</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Farm Packages</li>
+    </ol>
+    <a [routerLink]="['/admin/packages-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+      <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
+    </a>
 
-        <div class="section-body">
+    <div class="section-body">
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>FARM PACKAGES</h4>
-                        </div>
-                        <div class="card-body">
-                            <form method="post">
-                                <div class="row">
-                                    <div class="col-md-6 mb-5">
-                                        <div class="form-group files">
-                                            <label for="farm" class="">Farm Image</label>
-                                            <input type="file" id="farm" class="form-control1" multiple="" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-5">
-                                        <div class="form-group">
-                                            <label for="farmname">Package Name</label>
-                                            <input type="text" id="farmname" class="form-control" placeholder="" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="cycle">Cycle  <small>(in days)</small></label>
-                                            <input type="number" id="cycle" class="form-control" placeholder="" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="location">Location</label>
-                                            <input type="text" id="location" class="form-control" placeholder="" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="unit">Unit</label>
-                                            <input type="text" id="unit" class="form-control" placeholder="" required required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="profit">Profit</label>
-                                            <input type="text" id="profit" class="form-control" placeholder="">
-                                        </div>
-                                        <div class="custom-checkbox custom-control">
-                                            <input type="checkbox" id="status" data-checkboxes="mygroup" class="custom-control-input">
-                                            <label for="status" class="custom-control-label">Status</label>
-                                        </div>
-                                        <a href="#" class="float-right btn btn-outline btn-lg btn-primary m-b-5 m-t-5"
-                                        [routerLink]="['/admin/packages-list']"><i class="fa fa-floppy-o"></i> Save</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>FARM PACKAGES</h4>
             </div>
-        </div>
+            <div class="card-body">
+              <form #packageForm="ngForm"  >
+                <div class="row">
+                  <div class="col-md-4 mb-5">
+                    <div class="form-group">
+                      <label for="farm" class="">Farm Image</label>
+                      <input type="file" accept="image/*" (change)="OnfileChanged($event)" id="farmImg" name="farmImg"  class="form-control" multiple="" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="amountperunit"> Amount Per Unit</label>
+                      <input type="text" id="amountperunit" name="amountperunit" [(ngModel)]="packageData.amountPerUnit" class="form-control" required placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="location">Location</label>
+                      <input type="text" id="location" name="location" [(ngModel)]="packageData.location" class="form-control" placeholder="" required>
+                    </div>
+                  </div>
 
-    </section>
+                  <div class="col-md-4 mb-5">
+                    <div class="form-group">
+                      <label for="farmname">Package Name</label>
+                      <input type="text" [(ngModel)]="packageData.packageName" id="farmname" name="farmname" class="form-control" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="profit">ROI <small>(in %)</small></label>
+                      <input type="number" id="profit" name="profit" [(ngModel)]="packageData.profit" class="form-control" required placeholder="">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-5">
+                    <div class="form-group">
+                      <label for="unit">Unit Available</label>
+                      <input type="number" id="unit" name="unit" [(ngModel)]="packageData.unit" class="form-control" placeholder=""  required>
+                    </div>
+                    <div class="form-group">
+                      <label for="cycle">Cycle <small>(in days)</small></label>
+                      <input type="number" id="cycle" name="cycle" [(ngModel)]="packageData.cycle" class="form-control" placeholder="" required>
+                    </div>
+                  </div>
+                </div>
+                <button [disabled]="isBusy" (click)="save()" class="float-right btn btn-outline btn-lg  m-b-5 m-t-5"><i class="fa fa-floppy-o"></i> Save</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
 </div>

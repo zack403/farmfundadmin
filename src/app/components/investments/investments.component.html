@@ -2,7 +2,7 @@
     <section class="section">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">List</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Food Bank Subscribers</li>
+            <li class="breadcrumb-item active" aria-current="page">Farm Investments</li>
         </ol>
           <a (click)="refresh()"
             class="float-right btn btn-outline btn-lg btn-gray m-b-5 m-t-5"><i class="fa fa-refresh"></i> Refresh</a>
@@ -22,7 +22,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <h4>FOOD BANK SUBSCRIBERS ({{subscribers?.totalItems}})</h4>
+                            <h4>FARM INVESTMENTS ({{investments?.totalItems}})</h4>
                         </div>
                         <div class="card-body">
                             <div class="e-table">
@@ -30,31 +30,31 @@
                                     <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
                                         <tr>
                                             <th class="text-center">S/N</th>
-                                            <th>Subscriber Name</th>
-                                            <th>Phone No.</th>
+                                            <th>Investor</th>
+                                            <th>email</th>
+                                            <th>Package</th>
                                             <th>Unit</th>
-                                            <th>Subscription Amount</th>
+                                            <th>Amount</th>
                                             <th>Roi</th>
-                                            <th>Roc</th>
                                             <th>Payment Type </th>
-                                            <th >Proof of Payment</th>
+                                            <th>Proof of Payment</th>
                                             <th>Start Date</th>
                                             <th>End Date</th>
                                             <th>Status</th>
                                             <th class="text-center">Actions</th>
                                         </tr>
-                                        <tr *ngFor="let item of subscribers.data | paginate : {
+                                        <tr *ngFor="let item of investments.data | paginate : {
                                             itemsPerPage: size,
                                             currentPage: page,
-                                            totalItems: subscribers.totalItems
+                                            totalItems: investments.totalItems
                                         }; let i = index">
                                             <td class="">{{i + 1}}</td>
-                                            <td class="">{{item?.name}}</td>
-                                            <td class="">{{item?.phoneNo}}</td>
+                                            <td class="">{{item?.investor}}</td>
+                                            <td class="">{{item?.email}}</td>
+                                            <td class="">{{item?.package}}</td>
                                             <td class="">{{item?.unit}}</td>
                                             <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
                                             <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
-                                            <td class="text-right">{{item?.roc | currency: '&#8358; '}}</td>
                                             <td class="">{{item?.paymentType}}</td>
                                             <td class=""><a *ngIf="item.proofOfPayment && item.status === 'Pending'" download href="{{item?.proofOfPayment}}">View</a>
                                             </td>
@@ -63,7 +63,7 @@
                                             <td><label
                                                 [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label></td>
                                             <td class="">
-                                                <button title="Activate Subscriber" *ngIf="item.status === 'Pending'" (click)="activateSubscriber(item.id)"
+                                                <button title="Activate Investment" *ngIf="item.status === 'Pending'" (click)="activateInvestment(item.id)"
                                                     class="btn btn-outline-success"><i class="fa fa-check"></i>
                                                     </button>
                                                 &nbsp;

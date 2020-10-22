@@ -2,7 +2,7 @@
     <section class="section">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">View</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Farmify Orders</li>
+            <li class="breadcrumb-item active" aria-current="page">Food Bank Orders</li>
         </ol>
         <a [routerLink]="['/admin/orders-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
             <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
@@ -31,12 +31,12 @@
                                         <label for="phone">Phone No.</label>
                                         <input type="text" id="phone" name="phone" [(ngModel)]="partner.phoneNo" class="form-control"  readonly>
                                     </div>
-                                    
+
                                     <div class="form-group col-md-4">
                                         <label for="email">Email</label>
                                         <input type="text" id="email" name="email" class="form-control" [(ngModel)]="partner.email" readonly>
                                     </div>
-                                    
+
                                     <div class="form-group col-md-4">
                                         <label for="type">Type</label>
                                         <input type="text" id="type" name="type" [(ngModel)]="partner.type" class="form-control"  readonly>
@@ -53,7 +53,7 @@
                 <div class="col-lg-12">
                     <div class="e-panel card">
                         <div class="card-header">
-                            <h4>FARMIFY ORDERS ({{partner.PurchaseDetails.length}})</h4>
+                            <h4>FOOD BANK ORDERS ({{partner.PurchaseDetails.length}})</h4>
                         </div>
                         <div class="card-body">
                             <div class="e-table">
@@ -63,7 +63,7 @@
                                             <th>S/N</th>
                                             <th>Product</th>
                                             <th class="text-center">Price</th>
-                                            <th>Unit</th>
+                                            <th>Quantity</th>
                                         </tr>
                                         <tr *ngFor="let item of partner.PurchaseDetails; let i = index">
                                             <td class="">{{i + 1}}</td>
@@ -71,6 +71,12 @@
                                             <td class="text-right">{{item?.price | currency: '&#8358; '}}</td>
                                             <td class="">{{item?.unit}}</td>
                                         </tr>
+                                        <tr>
+                                          <th style="background-color: white;" class=""></th>
+                                          <th style="background-color: white; color: black;" class="">Total</th>
+                                          <th style="background-color: white; color: black;" class="text-right">{{partner.amount | currency: '&#8358; '}}</th>
+                                          <th style="background-color: white;" class=""></th>
+                                      </tr>
                                     </table>
                                 </div>
                             </div>
