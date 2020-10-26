@@ -7,6 +7,7 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ChartsModule } from 'ng2-charts';
+import { FarmDashboardComponent } from './farm-dashboard/farm-dashboard.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ChartsModule } from 'ng2-charts';
       HeaderComponent,
       SideBarComponent,
       FooterComponent,
-      DashboardComponent
+      DashboardComponent,
+      FarmDashboardComponent
   ],
   exports: [AdminComponent]
 })

@@ -26,6 +26,7 @@ import { SubscriptionsViewComponent } from '../../subsciptions/subscriptions-vie
 import { SubscriptionsEditComponent } from '../../subsciptions/subscriptions-edit/subscriptions-edit.component';
 import { SubscribersComponent } from '../../subscribers/subscribers.component';
 import { InvestmentsComponent } from '../../investments/investments.component';
+import { FarmDashboardComponent } from '../farm-dashboard/farm-dashboard.component';
 
 
 const adminRouter: Routes = [
@@ -141,6 +142,10 @@ const adminRouter: Routes = [
       {
         path: 'migration',
         component: MigrationComponent,
+      },
+      {
+        path: 'farm-dashboard',
+        component: FarmDashboardComponent,
       }
     ]
   },
