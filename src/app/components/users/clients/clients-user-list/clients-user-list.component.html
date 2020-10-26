@@ -49,10 +49,10 @@
                                             <th>Acct No </th>
                                             <th class="text-center">Actions</th>
                                         </tr>
-                                        <tr *ngFor="let item of customers.data | paginate : {
+                                        <tr *ngFor="let item of customers?.data | paginate : {
                                             itemsPerPage: size,
                                             currentPage: page,
-                                            totalItems: customers.totalItems
+                                            totalItems: customers?.totalItems
                                         }; let i = index">
                                             <td class="">{{i + 1}}</td>
                                             <td class="">{{item?.firstName}} {{item?.middleName}} {{item?.lastName}}</td>

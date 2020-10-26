@@ -164,7 +164,7 @@ $(function(e){
 				colorMap: {
 					'9': '#a1a1a1'
 				},
-				barColor: '#5458b3'
+				barColor: 'green'
 			});
 			
 			$(".sparkline_bar28").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 4, 5, 6, 3, 5], {
@@ -266,8 +266,8 @@ $(function(e){
 
 			$(".sparkline_line").sparkline([2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 5, 6, 4, 5, 6, 3, 5], {
 				type: 'line',
-				lineColor: '#5458b3',
-				fillColor: '#a9ace6',
+				lineColor: 'green',
+				fillColor: '#90EE90',
 				width: 80,
 				height: 50,
 				spotColor: '#f44336',
@@ -279,7 +279,7 @@ $(function(e){
 				type: 'pie',
 				width: 50,
 				height: 50,
-				sliceColors: ['#01b8ff','#f47b25','#5458b3','#ffb209']
+				sliceColors: ['#01b8ff','#f47b25','green','#ffb209']
 			});
 			
 			$(".sparkline_pie2").sparkline([1, 1, 2, 1], {
