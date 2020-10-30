@@ -28,7 +28,7 @@
 												<span class="sparkline_line" ></span>
 											</div>
 											<h3 class="mb-2 text-dark">{{customer?.investments.totalInv | currency: '&#8358; '}}</h3>
-											<span class="text-green"><i class="fa fa-arrow-up text-success"> </i>23% increase</span><small> last week</small>
+                      <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
 										</div>
 									</div>
 								</div>
@@ -44,7 +44,7 @@
 												<span class="sparkline_pie" ></span>
 											</div>
 											<h3 class="mb-2 text-dark">{{customer?.investments.totalRoi | currency: '&#8358; '}}</h3>
-											<span class="text-green"><i class="fa fa-arrow-down text-danger"> </i>10% increase</span><small> last week</small>
+                      <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
 										</div>
 									</div>
 								</div>
@@ -59,39 +59,26 @@
 												<span class="sparkline_bar" ></span>
 											</div>
 											<h3 class="mb-2 text-dark">{{customer?.investments.totalGain | currency: '&#8358; '}}</h3>
-											<span class="text-green"><i class="fa fa-arrow-up text-success"> </i>23% increase</span><small> last week</small>
+                      <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 col-12">
-								<div class="card">
-									<div class="card-body text-center">
-										<h5>Total </h5>
-										
-										<div class="text-center">
-											<div class="mb-3 mt-1">
-												<span class="sparkline_area" ></span>
-											</div>
-											<h3 class="mb-2 text-dark">{{customer?.investments.totalInv + customer?.investments.totalRoi + customer?.investments.totalGain | currency: '&#8358; ' }}</h3>
-										</div>
-									</div>
-								</div>
-							</div>
+							
             </div>
             
             <div class="row">
               <div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 col-12">
               <div class="card">
                 <div class="card-body text-center">
-                  <h5>Total Subs</h5>
+                  <h5>Total Subscriptions</h5>
                   
                   <div class="text-center">
                     <div class="mb-3 mt-1">
                       <span class="sparkline_line" ></span>
                     </div>
                     <h3 class="mb-2 text-dark">{{customer?.subscribers.totalSub | currency: '&#8358; '}}</h3>
-                    <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>23% increase</span><small> last week</small>
+                    <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
                   </div>
                 </div>
               </div>
@@ -107,7 +94,7 @@
                       <span class="sparkline_pie" ></span>
                     </div>
                     <h3 class="mb-2 text-dark">{{customer?.subscribers.totalRoi | currency: '&#8358; '}}</h3>
-                    <span class="text-green"><i class="fa fa-arrow-down text-danger"> </i>10% increase</span><small> last week</small>
+                    <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
                   </div>
                 </div>
               </div>
@@ -122,7 +109,7 @@
                       <span class="sparkline_bar" ></span>
                     </div>
                     <h3 class="mb-2 text-dark">{{customer?.subscribers.totalRoc | currency: '&#8358; '}}</h3>
-                    <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>23% increase</span><small> last week</small>
+                    <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
                   </div>
                 </div>
               </div>
@@ -137,6 +124,8 @@
                       <span class="sparkline_area" ></span>
                     </div>
                     <h3 class="mb-2 text-dark">{{customer?.purchases.totalOrder | currency: '&#8358; ' }}</h3>
+                    <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
+
                   </div>
                 </div>
               </div>
