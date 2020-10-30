@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UtilityService } from 'src/app/services/utility.service';
 import { ActivatedRoute } from '@angular/router';
 
+declare var $: any;
+
 @Component({
   selector: 'app-clients-user-view',
   templateUrl: './clients-user-view.component.html',
@@ -14,11 +16,12 @@ export class ClientsUserViewComponent implements OnInit {
   total: number;
 
 
-
   constructor(private utilSvc: UtilityService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    $.getScript('assets/js/sparkline.js');
     this.getCustomer();
+   
   }
 
   getCustomer() {

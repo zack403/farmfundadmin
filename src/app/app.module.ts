@@ -42,7 +42,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { SubscriptionsEditComponent } from './components/subsciptions/subscriptions-edit/subscriptions-edit.component';
 import { MigrationComponent } from './components/migration/migration.component';
 import { InvestmentsComponent } from './components/investments/investments.component';
-
+import { ChartsModule } from 'ng2-charts';
 export function tokenGetter() {
   return localStorage.getItem("adtoken");
 }
@@ -74,7 +74,7 @@ export function tokenGetter() {
     SubscribersComponent,
     SubscriptionsEditComponent,
     MigrationComponent,
-    InvestmentsComponent
+    InvestmentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +99,7 @@ export function tokenGetter() {
         disallowedRoutes: [],
       },
     }),
+    ChartsModule
   ],
   providers: [ ToasterService,
     AuthGuard,

@@ -1,70 +1,76 @@
 <div class="app-content">
-    <section class="section">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Edit</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Farm Packages</li>
-        </ol>
-        <a [routerLink]="['/admin/packages-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
-            <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
-        </a>
+  <section class="section">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Edit</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Farm Packages</li>
+    </ol>
+    <a [routerLink]="['/admin/packages-list']" class="float-right btn btn-outline btn-xs btn-gray m-b-5 m-t-5">
+      <i class="fa fa-reply-all" data-toggle="tooltip" title="fa-reply-all"></i>
+    </a>
 
-        <div class="section-body">
+    <div class="section-body">
 
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4>FARM PACKAGES</h4>
-                </div>
-                <div class="card-body">
-                  <form method="post">
-                    <div class="row">
-                      <div class="col-md-4 mb-5">
-                        <div class="form-group">
-                          <label for="farm" class="">Farm Image</label>
-                          <input type="file" (change)="OnfileChanged($event)" id="packageimage" class="form-control"  required>
-                        </div>
-                        <div class="form-group">
-                          <label for="amountperunit"> Amount Per Unit</label>
-                          <input type="text" id="amountperunit" name="amountperunit" name="productname" [(ngModel)]="package.amountPerUnit" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                          <label for="location">Location</label>
-                          <input type="text" id="location" name="location" name="location" [(ngModel)]="package.location" class="form-control" placeholder="" required>
-                        </div>
-                      </div>
-
-                      <div class="col-md-4 mb-5">
-                        <div class="form-group">
-                          <label for="farmname">Package Name</label>
-                          <input type="text" id="packageName" name="packageName" [(ngModel)]="package.packageName" class="form-control" placeholder="" required>
-                        </div>
-                        <div class="form-group">
-                          <label for="profit">ROI <small>(in %)</small></label>
-                          <input type="number" id="profit" name="profit" [(ngModel)]="package.profit"  class="form-control" placeholder="" required>
-                        </div>
-                      </div>
-
-                      <div class="col-md-4 mb-5">
-                        <div class="form-group">
-                          <label for="unit">Unit Available</label>
-                          <input type="number" id="unit" name="unit" [(ngModel)]="package.unit" class="form-control" placeholder="" required required>
-                        </div>
-                        <div class="form-group">
-                          <label for="cycle">Cycle <small>(in days)</small></label>
-                          <input type="number" id="cycle" name="cycle" [(ngModel)]="package.cycle"  class="form-control" placeholder="" required>
-                        </div>
-
-                        <a  class="float-right btn btn-outline btn-lg btn-primary m-b-5 m-t-5"
-                          (click)="save()" ><i class="fa fa-floppy-o"></i> Save</a>
-                      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>FARM PACKAGES</h4>
+            </div>
+            <div class="card-body">
+              <form method="post">
+                <div class="row">
+                  <div class="col-md-4 mb-5">
+                    <div class="form-group">
+                      <label for="farm" class="">Farm Image</label>
+                      <input type="file" (change)="OnfileChanged($event)" id="packageimage" class="form-control"
+                        required>
                     </div>
-                  </form>
+                    <div class="form-group">
+                      <label for="amountperunit"> Amount Per Unit</label>
+                      <input type="text" id="amountperunit" name="amountperunit" name="productname"
+                        [(ngModel)]="package.amountPerUnit" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="location">Location</label>
+                      <input type="text" id="location" name="location" name="location" [(ngModel)]="package.location"
+                        class="form-control" placeholder="" required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-5">
+                    <div class="form-group">
+                      <label for="farmname">Package Name</label>
+                      <input type="text" id="packageName" name="packageName" [(ngModel)]="package.packageName"
+                        class="form-control" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="profit">ROI <small>(in %)</small></label>
+                      <input type="number" id="profit" name="profit" [(ngModel)]="package.profit" class="form-control"
+                        placeholder="" required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-5">
+                    <div class="form-group">
+                      <label for="unit">Unit Available</label>
+                      <input type="number" id="unit" name="unit" [(ngModel)]="package.unit" class="form-control"
+                        placeholder="" required required>
+                    </div>
+                    <div class="form-group">
+                      <label for="cycle">Cycle <small>(in days)</small></label>
+                      <input type="number" id="cycle" name="cycle" [(ngModel)]="package.cycle" class="form-control"
+                        placeholder="" required>
+                    </div>
+                  </div>
                 </div>
-              </div>
+                <button (click)="save()" class="float-right btn btn-outline btn-lg  m-b-5 m-t-5"><i
+                  class="fa fa-floppy-o"></i> Save</button>
+              </form>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-    </section>
+  </section>
 </div>
