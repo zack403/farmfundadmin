@@ -194,7 +194,7 @@ $(function(e){
 				colorMap: {
 					'9': '#a1a1a1'
 				},
-				barColor: '#01b8ff'
+				barColor: 'green'
 			});
 			
 			$(".sparkline_bar3").sparkline([5, 2, 4, 5, 8, 3, 4, 6, 8, 3, 3, 2, 3], {
