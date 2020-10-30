@@ -16,8 +16,8 @@
                               <span class="sparkline_line" ></span>
                           </div>
                           <h3 class="mb-2 text-dark">{{farmData.totalInvs | currency: '&#8358; '}}</h3>
-                          <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>23% increase</span><small> last week</small>
-                      </div>
+                          <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
+                        </div>
                   </div>
               </div>
           </div>
@@ -33,8 +33,8 @@
                               <span class="sparkline_bar" ></span>
                           </div>
                           <h3 class="mb-2 text-dark">{{farmData.totalGains | currency: '&#8358; '  }}</h3>
-                          <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>23% increase</span><small> last week</small>
-                      </div>
+                          <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
+                        </div>
                   </div>
               </div>
           </div>
@@ -49,7 +49,23 @@
                             <span class="sparkline_area" ></span>
                         </div>
                         <h3 class="mb-2 text-dark">{{farmData.totalInvestors}}</h3>
-                        <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>23% increase</span><small> last week</small>
+                        <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5>Investments Count</h5>
+
+                    <div class="text-center">
+                        <div class="mb-3 mt-1">
+                            <span class="sparkline_pie" ></span>
+                        </div>
+                        <h3 class="mb-2 text-dark">{{invSummary.length}}</h3>
+                        <span class="text-green"><i class="fa fa-arrow-up text-success"> </i>100% increase</span><small> today</small>
                     </div>
                 </div>
             </div>
@@ -73,12 +89,12 @@
             </div>
         </div>
           </div>
-          <div class="col-lg-6 col-xl-4 col-md-12 col-12">
-            <div class="card">
+          <div  class="col-lg-6 col-xl-4 col-md-12 col-12">
+            <div  class="card">
                     
                 <h5 class="card-header text-dark">Yearly Investments</h5>
         
-            <div class="chart-wrapper">
+            <div style="height: 250px; width: 430px;" class="chart-wrapper">
                 <canvas baseChart
                 [data]="doughnutChartData"
                 [labels]="doughnutChartLabels"
@@ -92,7 +108,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="">
-                        <h5 class="float-left  ">Pending Investment</h5>
+                        <h5 class="float-left  ">Pending Investments</h5>
                         <h3 class="float-right mb-0">{{pendingInv}}</h3>
                     </div>
                 </div> 
@@ -100,10 +116,10 @@
                     <span class="sparkline_area " style="margin-left: 100px;"></span>
                 </div>
             </div>
-            <div class="card ">
+            <div style="margin-top: -14px;" class="card ">
                 <div class="card-body text-center ">
                     <div class="">
-                        <h5 class="float-left  ">Active Investment</h5>
+                        <h5 class="float-left  ">Active Investments</h5>
                         <h3 class="float-right mb-0">{{activeInv}}</h3>
                     </div>
                 </div> 
