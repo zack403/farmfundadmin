@@ -14,30 +14,31 @@ export class FarmDashboardComponent implements OnInit {
   farmData: any= {};
   pendingInv: number;
   activeInv: number;
-  invSummary : any;
-  labels =  ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  topfiveinvestors : any;
+  topfivefarms : any;
+
 
 
 
   barChartOptions: ChartOptions = {
     responsive: true,
   };
-  barChartLabels: Label[] = this.labels;
+  barChartLabels: Label[] = [];
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
 
   barChartData: ChartDataSets[] = [
-    { data: [45, 37, 60, 70, 46, 33, 45, 53, 48, 56, 58, 80], label: 'Monthly Sales' }
+    { data: [], label: 'Monthly Investments' }
   ];
 
   barChartColors: Color[] = [
     {backgroundColor: 'green' },
   ]
 
-  doughnutChartLabels: Label[] = ['Fish', 'Pig', 'Chicken'];
+  doughnutChartLabels: Label[] = [];
   doughnutChartData: MultiDataSet = [
-    [55, 25, 20]
+    []
   ];
   doughnutChartType: ChartType = 'doughnut';
 
@@ -58,9 +59,10 @@ export class FarmDashboardComponent implements OnInit {
   getDashboardData() {
     this.getFarmDashboard();
     this.getInvInfo();
-    this.getInvSummary();
-    // this.getMonthlySales();
-    // this.getYearlySales();
+    this.getTopFiveFarms();
+    this.getTopFiveInvestors();
+    this.getMonthlyInvs();
+    this.getYearlyInvs();
   }
 
 
@@ -70,9 +72,15 @@ export class FarmDashboardComponent implements OnInit {
     })
   }
 
-  getInvSummary () {
-    this.dashSvc.Get('dashboard/farminvestmentdashboard/invSummary').subscribe((res: any) => {
-      this.invSummary = res.invSummary;
+  getTopFiveInvestors () {
+    this.dashSvc.Get('dashboard/farminvestmentdashboard/topfiveinvestors').subscribe((res: any) => {
+      this.topfiveinvestors = res;
+    })
+  }
+
+  getTopFiveFarms () {
+    this.dashSvc.Get('dashboard/farminvestmentdashboard/topfivefarms').subscribe((res: any) => {
+      this.topfivefarms = res;
     })
   }
   
@@ -81,6 +89,31 @@ export class FarmDashboardComponent implements OnInit {
     this.dashSvc.Get('dashboard/farminvestmentdashboard/invInfo').subscribe((res: any) => {
       this.pendingInv = res.pendingInv;
       this.activeInv = res.activeInv;
+    })
+  }
+
+  getYearlyInvs () {
+    let m;
+    this.dashSvc.Get('dashboard/farminvestmentdashboard/yearlyinvs').subscribe((res: any) => {
+      this.doughnutChartData = res;
+
+      for (m = 0; m < 3; m++) {
+        let yearInNo = new Date().getFullYear() - m;
+        let yearInstr = yearInNo.toString();
+        this.doughnutChartLabels.push(yearInstr);
+      }
+    })
+  }
+
+
+  getMonthlyInvs () {
+    this.dashSvc.Get('dashboard/farminvestmentdashboard/monthlyinvs').subscribe((res: any) => {
+      if(res.length > 0) {
+        for (const r of res) {
+          this.barChartData[0].data.push(r.totalAmount);
+          this.barChartLabels.push(r.monthName.toUpperCase());
+        }
+      }
     })
   }
 

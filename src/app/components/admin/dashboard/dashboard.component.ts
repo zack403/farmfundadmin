@@ -17,31 +17,29 @@ export class DashboardComponent implements OnInit {
   lastWeek: number;
   today: number;
   topfivecustomer: any;
-
-
-  labels =  ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  topfiveproducts: any;
   foodData: any= {};
   
   
   barChartOptions: ChartOptions = {
     responsive: true,
   };
-  barChartLabels: Label[] = this.labels;
+  barChartLabels: Label[] = [];
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
 
   barChartData: ChartDataSets[] = [
-    { data: [45, 37, 60, 70, 46, 33, 45, 53, 48, 56, 58, 80], label: 'Monthly Sales' }
+    { data: [], label: 'Monthly Sales' },
   ];
 
   barChartColors: Color[] = [
     {backgroundColor: 'green' },
   ]
 
-  doughnutChartLabels: Label[] = ['Prod1', 'Prod2', 'Prod3'];
+  doughnutChartLabels: Label[] = [];
   doughnutChartData: MultiDataSet = [
-    [55, 25, 20]
+    []
   ];
   doughnutChartType: ChartType = 'doughnut';
 
@@ -61,34 +59,50 @@ export class DashboardComponent implements OnInit {
     this.getFoodDashboard();
     this.getTopFive();
     this.getOrders();
-    // this.getMonthlySales();
-    // this.getYearlySales();
+    this.getMonthlySales();
+    this.getYearlySales();
+    this.getTopFiveProducts();
   }
 
   getFoodDashboard() {
     this.dashSvc.Get('dashboard/fooddashboard').subscribe((res: any) => {
       this.foodData = res;
-      console.log("foodata",this.foodData)
     })
   }
 
   getYearlySales () {
+    let m;
     this.dashSvc.Get('dashboard/fooddashboard/yearlysales').subscribe((res: any) => {
-      this.doughnutChartLabels.push(res.productName);
-      this.doughnutChartData.push(res.unit);
+      this.doughnutChartData = res;
+      for (m = 0; m < 3; m++) {
+        let yearInNo = new Date().getFullYear() - m;
+        let yearInstr = yearInNo.toString();
+        this.doughnutChartLabels.push(yearInstr);
+      }
     })
   }
 
 
   getMonthlySales () {
     this.dashSvc.Get('dashboard/fooddashboard/monthlysales').subscribe((res: any) => {
-      this.barChartData = res as any [];
+      if(res.length > 0) {
+        for (const r of res) {
+          this.barChartData[0].data.push(r.totalAmount);
+          this.barChartLabels.push(r.monthName.toUpperCase());
+        }
+      }
     })
   }
 
   getTopFive () {
     this.dashSvc.Get('dashboard/fooddashboard/topfivecustomer').subscribe((res: any) => {
       this.topfivecustomer = res;
+    })
+  }
+
+  getTopFiveProducts () {
+    this.dashSvc.Get('dashboard/fooddashboard/topfiveproducts').subscribe((res: any) => {
+      this.topfiveproducts = res;
     })
   }
   
