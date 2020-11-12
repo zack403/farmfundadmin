@@ -27,7 +27,6 @@ export class ClientsUserViewComponent implements OnInit {
   getCustomer() {
     this.utilSvc.GetById('users', this.route.snapshot.paramMap.get('id')).subscribe((res: any) => {
       this.customer = res.data;
-      console.log(res);
     })
   }
 
