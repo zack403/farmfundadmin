@@ -62,7 +62,7 @@
                                                     class="btn btn-outline-secondary"><i class="fa fa-check"></i>
                                                     </button>
                                                 &nbsp;
-                                                <button title="Delete" class="btn btn-outline-danger" (click)="delete(item.id)"><i
+                                                <button title="Delete" *ngIf="item.status === 'Pending'" class="btn btn-outline-danger" (click)="delete(item.id)"><i
                                                         class="fe fe-trash-2"></i> </button>
                                             </td>
                                         </tr>
