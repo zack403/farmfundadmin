@@ -134,10 +134,10 @@
           <div class="card-header row">
             <h5 class="col-md-6">Top 5 Investors</h5>
             <div class="form-group col-md-6">
-              <select class="float-right">
-                <option>Today</option>
-                <option>Last Month</option>
-                <option>Last Year</option>
+              <select (change)="dateCstChanged($event)" class="float-right">
+                <option value="today">Today</option>
+                <option value="month">Month</option>
+                <option value="year">Year</option>
               </select>
             </div>
           </div>
@@ -167,10 +167,10 @@
           <div class="card-header row">
             <h5 class="col-md-6">Top 5 Farm Packages</h5>
             <div class="form-group col-md-6">
-              <select class="float-right">
-                <option>Today</option>
-                <option>Month</option>
-                <option>Year</option>
+              <select (change)="dateProdChanged($event)" class="float-right">
+                <option value="today">Today</option>
+                <option value="month">Month</option>
+                <option value="year">Year</option>
               </select>
             </div>
           </div>

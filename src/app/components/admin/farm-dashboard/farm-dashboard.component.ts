@@ -16,7 +16,7 @@ export class FarmDashboardComponent implements OnInit {
   activeInv: number;
   topfiveinvestors : any;
   topfivefarms : any;
-
+  dateRange : string = 'today';
 
 
 
@@ -73,13 +73,13 @@ export class FarmDashboardComponent implements OnInit {
   }
 
   getTopFiveInvestors () {
-    this.dashSvc.Get('dashboard/farminvestmentdashboard/topfiveinvestors').subscribe((res: any) => {
+    this.dashSvc.Get(`dashboard/farminvestmentdashboard/topfiveinvestors?dateRange=${this.dateRange}`).subscribe((res: any) => {
       this.topfiveinvestors = res;
     })
   }
 
   getTopFiveFarms () {
-    this.dashSvc.Get('dashboard/farminvestmentdashboard/topfivefarms').subscribe((res: any) => {
+    this.dashSvc.Get(`dashboard/farminvestmentdashboard/topfivefarms?dateRange=${this.dateRange}`).subscribe((res: any) => {
       this.topfivefarms = res;
     })
   }
@@ -117,6 +117,16 @@ export class FarmDashboardComponent implements OnInit {
     })
   }
 
+
+  dateCstChanged(event) {
+    this.dateRange = event.target.value;
+    this.getTopFiveInvestors();
+  }
+
+  dateProdChanged(event) {
+    this.dateRange = event.target.value;
+    this.getTopFiveFarms();
+  }
 
   
 

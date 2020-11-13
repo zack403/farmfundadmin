@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
   topfivecustomer: any;
   topfiveproducts: any;
   foodData: any= {};
+  dateRange : string = 'today';
+  orderDateRange: string = "Pending";
   
   
   barChartOptions: ChartOptions = {
@@ -94,21 +96,36 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  dateCstChanged(event) {
+    this.dateRange = event.target.value;
+    this.getTopFive();
+  }
+
+  dateProdChanged(event) {
+    this.dateRange = event.target.value;
+    this.getTopFiveProducts();
+  }
+
+  dateOrderChanged(event) {
+    this.orderDateRange = event.target.value;
+    this.getOrders()
+  }
+
   getTopFive () {
-    this.dashSvc.Get('dashboard/fooddashboard/topfivecustomer').subscribe((res: any) => {
+    this.dashSvc.Get(`dashboard/fooddashboard/topfivecustomer?dateRange=${this.dateRange}`).subscribe((res: any) => {
       this.topfivecustomer = res;
     })
   }
 
   getTopFiveProducts () {
-    this.dashSvc.Get('dashboard/fooddashboard/topfiveproducts').subscribe((res: any) => {
+    this.dashSvc.Get(`dashboard/fooddashboard/topfiveproducts?dateRange=${this.dateRange}`).subscribe((res: any) => {
       this.topfiveproducts = res;
     })
   }
   
 
   getOrders () {
-    this.dashSvc.Get('dashboard/fooddashboard/orderInfo').subscribe((res: any) => {
+    this.dashSvc.Get(`dashboard/fooddashboard/orderInfo?dateRange=${this.orderDateRange}`).subscribe((res: any) => {
       this.thisWeek = res.thisWeek;
       this.lastWeek = res.lastWeek;
       this.today = res.today;
