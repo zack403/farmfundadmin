@@ -19,7 +19,6 @@ export class AuthService {
     login(model: any) {
       return this.httpService.post('auth/login', model)
         .pipe(tap(async (res: any) => {
-          console.log(res);
           if(res.data){
             localStorage.setItem("adminData", JSON.stringify(res.data));   
             localStorage.setItem("adtoken", res.token);                     
