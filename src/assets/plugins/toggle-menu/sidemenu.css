@@ -550,7 +550,7 @@
 		-webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
 		box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
 	}
-	
+
 	.sidebar-mini.sidenav-toggled .slide:hover .side-menu__label {
 		opacity: 1;
 	}
@@ -611,9 +611,12 @@
 	margin-left: 0;
 }
 .app.sidebar-mini.sidenav-toggled .side-menu__item:last-child{
-	border-bottom:1px solid rgba(255,255,255,0.051);
+  border-bottom:1px solid rgba(255,255,255,0.051);
+  background: green;
 }
-
+.app.sidebar-mini.sidenav-toggled .side-menu__item:last-child:hover{
+  background: blck;
+}
 .app.sidebar-mini .side-menu_label{
 	display:none;
 }

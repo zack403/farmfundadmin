@@ -22,7 +22,7 @@
 								<div class="card">
 									<div class="card-body text-center">
 										<h5>Total Investments</h5>
-										
+
 										<div class="text-center">
 											<div class="mb-3 mt-1">
 												<span class="sparkline_line" ></span>
@@ -33,12 +33,12 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 col-12">
 								<div class="card">
 									<div class="card-body text-center">
-										<h5>Total Roi</h5>
-										
+										<h5>Total ROI</h5>
+
 										<div class="text-center">
 											<div class="mb-3 mt-1">
 												<span class="sparkline_pie" ></span>
@@ -53,7 +53,7 @@
 								<div class="card">
 									<div class="card-body text-center">
 										<h5>Total Gain</h5>
-										
+
 										<div class="text-center">
 											<div class="mb-3 mt-1">
 												<span class="sparkline_bar" ></span>
@@ -64,15 +64,15 @@
 									</div>
 								</div>
 							</div>
-							
+
             </div>
-            
+
             <div class="row">
               <div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 col-12">
               <div class="card">
                 <div class="card-body text-center">
                   <h5>Total Subscriptions</h5>
-                  
+
                   <div class="text-center">
                     <div class="mb-3 mt-1">
                       <span class="sparkline_line" ></span>
@@ -83,12 +83,12 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="col-lg-6 col-xl-3 col-md-6 col-sm-6 col-12">
               <div class="card">
                 <div class="card-body text-center">
-                  <h5>Total Roi</h5>
-                  
+                  <h5>Total ROI</h5>
+
                   <div class="text-center">
                     <div class="mb-3 mt-1">
                       <span class="sparkline_pie" ></span>
@@ -103,7 +103,7 @@
               <div class="card">
                 <div class="card-body text-center">
                   <h5>Total ROC</h5>
-                  
+
                   <div class="text-center">
                     <div class="mb-3 mt-1">
                       <span class="sparkline_bar" ></span>
@@ -118,7 +118,7 @@
               <div class="card">
                 <div class="card-body text-center">
                   <h5>Total Food Order</h5>
-                  
+
                   <div class="text-center">
                     <div class="mb-3 mt-1">
                       <span class="sparkline_area" ></span>
@@ -136,6 +136,44 @@
           </div>
           <div class="card">
             <div class="card-header">
+              <h4>Farm Investments count: {{customer?.investments.inv.length}}</h4>
+            </div>
+            <div class="card-body">
+              <div class="e-table">
+                <div class="table-responsive table-lg">
+                  <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
+                    <tr>
+                      <th class="text-center">S/N</th>
+                      <th> Investor</th>
+                      <th> Amount</th>
+                      <th>Unit</th>
+                      <th>ROI</th>
+                      <th>Payment Type </th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr *ngFor="let item of customer?.investments.inv; let i = index">
+                      <td class="">{{i + 1}}</td>
+                      <td class="">{{item?.investor}}</td>
+                      <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
+                      <td class="">{{item?.unit}}</td>
+                      <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
+                      <td class="">{{item?.paymentType}}</td>
+                      <td class="">{{item?.startDate | date: "mediumDate"}}</td>
+                      <td class="">{{item?.endDate | date: "mediumDate"}}</td>
+                      <td><label
+                          [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label>
+                      </td>
+
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
               <h4> Food Bank Subscriptions count: {{customer?.subscribers.subs.length}}</h4>
             </div>
             <div class="card-body">
@@ -146,8 +184,8 @@
                       <th class="text-center">S/N</th>
                       <th>Subscription Amount</th>
                       <th>Unit</th>
-                      <th>Roi</th>
-                      <th>Roc</th>
+                      <th>ROI</th>
+                      <th>ROC</th>
                       <th>Payment Type </th>
                       <th>Start Date</th>
                       <th>End Date</th>
@@ -249,44 +287,6 @@
                       <th style="background-color: white;" class=""></th>
                     </tr>
 
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h4>Farm Investments count: {{customer?.investments.inv.length}}</h4>
-            </div>
-            <div class="card-body">
-              <div class="e-table">
-                <div class="table-responsive table-lg">
-                  <table class="table table-bordered table-striped table-bordered mb-0 text-nowrap">
-                    <tr>
-                      <th class="text-center">S/N</th>
-                      <th> Investor</th>
-                      <th> Amount</th>
-                      <th>Unit</th>
-                      <th>Roi</th>
-                      <th>Payment Type </th>
-                      <th>Start Date</th>
-                      <th>End Date</th>
-                      <th>Status</th>
-                    </tr>
-                    <tr *ngFor="let item of customer?.investments.inv; let i = index">
-                      <td class="">{{i + 1}}</td>
-                      <td class="">{{item?.investor}}</td>
-                      <td class="text-right">{{item?.amount | currency: '&#8358; '}}</td>
-                      <td class="">{{item?.unit}}</td>
-                      <td class="text-right">{{item?.roi | currency: '&#8358; '}}</td>
-                      <td class="">{{item?.paymentType}}</td>
-                      <td class="">{{item?.startDate | date: "mediumDate"}}</td>
-                      <td class="">{{item?.endDate | date: "mediumDate"}}</td>
-                      <td><label
-                          [ngClass]="{'badge badge-warning badge-pill size': item.status === 'Pending', 'badge badge-success': item.status === 'Activated'}">{{item.status}}</label>
-                      </td>
-
-                    </tr>
                   </table>
                 </div>
               </div>
