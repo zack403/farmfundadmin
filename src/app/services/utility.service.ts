@@ -46,4 +46,17 @@ export class UtilityService {
       return res;
     }))
   }
+
+  GetNotifications() {
+    return this.httpSvc.get("utility/notifications").pipe(tap(res => {
+      return res;
+    }))
+  }
+
+  UpdateNotifications(data) {
+    return this.httpSvc.put("utility/notifications", data).pipe(tap(res => {
+      return res;
+    }))
+  }
+
 }

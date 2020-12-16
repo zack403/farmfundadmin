@@ -27,6 +27,7 @@ import { SubscriptionsEditComponent } from '../../subsciptions/subscriptions-edi
 import { SubscribersComponent } from '../../subscribers/subscribers.component';
 import { InvestmentsComponent } from '../../investments/investments.component';
 import { FarmDashboardComponent } from '../farm-dashboard/farm-dashboard.component';
+import { NotificationsComponent } from '../notifications/notifications.component';
 
 
 const adminRouter: Routes = [
@@ -146,6 +147,10 @@ const adminRouter: Routes = [
       {
         path: 'farm-dashboard',
         component: FarmDashboardComponent,
+      },
+      {
+        path: 'notifications',
+        component: NotificationsComponent
       }
     ]
   },

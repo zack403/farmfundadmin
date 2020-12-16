@@ -8,6 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ChartsModule } from 'ng2-charts';
 import { FarmDashboardComponent } from './farm-dashboard/farm-dashboard.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { FarmDashboardComponent } from './farm-dashboard/farm-dashboard.componen
       SideBarComponent,
       FooterComponent,
       DashboardComponent,
-      FarmDashboardComponent
+      FarmDashboardComponent,
+      NotificationsComponent,
+      TimeAgoPipe
   ],
   exports: [AdminComponent]
 })

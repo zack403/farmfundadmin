@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToasterService } from 'src/app/services/toaster.service';
+import { UtilityService } from 'src/app/services/utility.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 
@@ -12,10 +14,20 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 export class HeaderComponent implements OnInit {
   user: any;
   photo: string;
-  constructor(private authSvc: AuthService, private toastrSvc: ToasterService) { }
+  notifications: any = [];
+  notLength : any = [];
+
+
+  constructor(
+    private authSvc: AuthService, 
+    private toastrSvc: ToasterService,
+    private utilSvc: UtilityService,
+    private router: Router) { }
 
   ngOnInit() {
     this.user = this.authSvc.getCurrentUserData();
+    this.getNotifications();
+
 
   }
 
@@ -76,6 +88,35 @@ export class HeaderComponent implements OnInit {
         });
       }
     })
+  }
+
+  getNotifications() {
+    this.utilSvc.GetNotifications().subscribe((notifications: any) => {
+      this.notifications = notifications.data;
+      this.notLength = this.notifications.filter(x => x.isViewed === false);
+
+    }) 
+  }
+
+  viewNot(item) {
+    this.router.navigateByUrl("admin/notifications", { state: { item}});
+  }
+
+  updateNot() {
+    
+    let req = {
+      notifications: this.notLength
+    }
+
+
+    this.utilSvc.UpdateNotifications(req).subscribe((res: any) => {
+      console.log(res);
+      this.notLength.length = 0;
+      req = {
+        notifications: []
+      }
+    }) 
+
   }
 
 }

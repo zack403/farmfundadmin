@@ -1654,7 +1654,8 @@ a.dropdown-item.has-icon, a.dropdown-item.has-icon i{
 	margin-bottom:0;
 }
 .dropdown-list .dropdown-list-content {
-	overflow: hidden;
+	overflow: visible;
+	word-break: break-all;
 }
 .navbar .dropdown-menu-right:before {
     content:"";
@@ -3764,56 +3765,7 @@ tr:first-child>td>.fc-day-grid-event {
  * ----------------------
  */
 
-#toast-container>div {
-	-webkit-box-shadow: 0 0 25px rgba(0, 0, 0, .15) !important;
-	box-shadow: 0 0 25px rgba(0, 0, 0, .15) !important;
-	padding: 20px 20px 20px 50px;
-	opacity: 1;
-}
-#toast-container>.toast {
-	background-image: none !important;
-}
-#toast-container>.toast:before {
-	position: absolute;
-	left: 17px;
-	top: 25px;
-	font-family: 'Ionicons';
-	font-size: 24px;
-	line-height: 18px;
-	color: #fff;
-}
-#toast-container>.toast-warning:before {
-	content: "\f100";
-}
-#toast-container>.toast-error:before {
-	content: "\f2d7";
-}
-#toast-container>.toast-info:before {
-	content: "\f44c";
-	color: #fff;
-}
-#toast-container>.toast-success:before {
-	content: "\f121";
-}
-.toast.toast-error {
-	background-color: #ac243a;
-}
-.toast.toast-warning {
-	background-color: #f6d30c;
-}
-.toast.toast-success {
-	background-color: #00d02f;
-}
-.toast.toast-info {
-	background-color: #fff;
-}
-.toast.toast-info .toast-title, .toast.toast-info .toast-message {
-	color: #fff;
-}
-.toast.toast-info .toast-message {
-	margin-top: 5px;
-}
-/*-- end toast --*/
+
 
 /*-- Statistic --*/
 
