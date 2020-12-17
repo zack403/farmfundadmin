@@ -1,3 +1,22 @@
 .dropdown-item  {
     cursor: pointer;
 }
+.badge {
+    padding: 3px 3px;
+}
+.item-desc {
+	white-space: normal;
+	margin-top: 4px;
+}
+#not-button {
+    color: green;
+    cursor: pointer;
+  }
+  #not-button:hover {
+    color: yellowgreen;
+  }
+
+  #fullscreen-button {
+    color: green;
+    cursor: pointer;
+}

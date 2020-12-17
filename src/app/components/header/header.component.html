@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg main-navbar">
-    <a class="header-brand" href="index.html">
+    <a class="header-brand" [routerLink]="['/admin/dashboard']" >
         <img src="assets/img/brand/logo-2.jpeg" class="header-brand-img" alt="Farmfunds-Admin  logo" style="height: 70px;">
     </a>
     <form class="form-inline mr-auto">
         <ul class="navbar-nav mr-3">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-md-none navsearch"><i class="ion ion-search"></i></a></li>
+            <li class="dropdown-list-toggle"><a href="#" data-toggle="search" class="nav-link nav-link-lg d-md-none navsearch"><i class="ion ion-search"></i></a></li>
         </ul>
         <!-- <div class="search-element">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -13,7 +13,7 @@
         </div> -->
     </form>
     <ul class="navbar-nav navbar-right">
-        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="ion-ios-email-outline"></i></a>
+        <!-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="ion-ios-email-outline"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
                 <div class="dropdown-header">Messages
                     <div class="float-right">
@@ -21,114 +21,30 @@
                     </div>
                 </div>
                 <div class="dropdown-list-content">
-                    <!-- <a href="#" class="dropdown-item dropdown-item-unread">
-                        <img alt="image" src="assets/img/avatar/avatar-1.jpg" class="rounded-circle dropdown-item-img">
-                        <div class="dropdown-item-desc">
-                            <div class="dropdownmsg d-flex">
-                                <div class="">
-                                    <b>Stewart Ball</b>
-                                    <p>Your template awesome</p>
-                                </div>
-                                <div class="time">6 hours ago</div>
-                            </div>
+            
 
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item dropdown-item-unread">
-                        <img alt="image" src="assets/img/avatar/avatar-2.jpg" class="rounded-circle dropdown-item-img">
-                        <div class="dropdown-item-desc">
-                            <div class="dropdownmsg d-flex">
-                                <div class="">
-                                    <b>Jonathan North</b>
-                                    <p>Your Order Shipped.....</p>
-                                </div>
-                                <div class="time">45 mins ago</div>
-                            </div>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <img alt="image" src="assets/img/avatar/avatar-4.jpg" class="rounded-circle dropdown-item-img">
-                        <div class="dropdown-item-desc">
-                            <div class="dropdownmsg d-flex">
-                                <div class="">
-                                    <b>Victor Taylor</b>
-                                    <p>Hi!, I' am web developer</p>
-                                </div>
-                                <div class="time"> 8 hours ago</div>
-                            </div>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <img alt="image" src="assets/img/avatar/avatar-3.jpg" class="rounded-circle dropdown-item-img">
-                        <div class="dropdown-item-desc">
-                            <div class="dropdownmsg d-flex">
-                                <div class="">
-                                    <b>Ruth	Arnold</b>
-                                    <p>Hi!, I' am web designer</p>
-                                </div>
-                                <div class="time"> 3 hours ago</div>
-                            </div>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <img alt="image" src="assets/img/avatar/avatar-5.jpg" class="rounded-circle dropdown-item-img">
-                        <div class="dropdown-item-desc">
-                            <div class="dropdownmsg d-flex">
-                                <div class="">
-                                    <b>Sam	Lyman</b>
-                                    <p>Hi!, I' am java developer</p>
-                                </div>
-                                <div class="time"> 15 mintues ago</div>
-                            </div>
-                        </div>
-                    </a> -->
                 </div>
             </div>
-        </li>
-        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link  nav-link-lg beep"><i class="ion-ios-bell-outline"></i></a>
+        </li> -->
+        <li class="dropdown "><a (click)="notLength.length > 0 ? updateNot() : ''" data-toggle="dropdown" class="nav-link  nav-link-lg "><i id="not-button"   class="ion-ios-bell-outline"></i>
+            <small  *ngIf="notLength.length > 0"
+                class="badge badge-danger">{{
+                    notLength.length
+                  }}</small>
+            </a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
                 <div class="dropdown-header">Notifications
-                    <div class="float-right">
-                        <a href="#">View All</a>
+                    <div *ngIf="notifications.length > 1" class="float-right">
+                        <a [routerLink]="['/admin/notifications']">View All</a>
                     </div>
                 </div>
                 <div class="dropdown-list-content">
-                    <!-- <a href="#" class="dropdown-item">
-                        <i class="fa fa-users text-primary"></i>
-                        <div class="dropdown-item-desc">
-                            <b>So many Users Visit your template</b>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <i class="fa fa-exclamation-triangle text-danger"></i>
-                        <div class="dropdown-item-desc">
-                            <b>Error message occurred....</b>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <i class="fa fa-users text-warning"></i>
-                        <div class="dropdown-item-desc">
-                            <b> Adding new people</b>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <i class="fa fa-shopping-cart text-success"></i>
-                        <div class="dropdown-item-desc">
-                            <b>Your items Arrived</b>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <i class="fa fa-comment text-primary"></i>
-                        <div class="dropdown-item-desc">
-                            <b>New Message received</b> <div class="float-right"><span class="badge badge-pill badge-danger badge-sm">67</span></div>
-                        </div>
-                    </a> -->
-                    <!-- <a href="#" class="dropdown-item">
-                        <i class="fa fa-users text-primary"></i>
-                        <div class="dropdown-item-desc">
-                            <b>So many Users Visit your template</b>
-                        </div>
-                    </a> -->
+                    <a title="{{item.message}}" *ngFor="let item of notifications" class="dropdown-item">
+                        <div class="item-desc"> 
+                            <b (click)="viewNot(item)">{{item.message}}</b>
+                          </div>  
+                        <small> {{item.createdAt | timeAgo}} </small>
+                    </a>
                 </div>
             </div>
         </li>
