@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit {
   photo: string;
   notifications: any = [];
   notLength : any = [];
+  live: boolean = true;
+
 
 
   constructor(

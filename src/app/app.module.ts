@@ -43,6 +43,9 @@ import { SubscriptionsEditComponent } from './components/subsciptions/subscripti
 import { MigrationComponent } from './components/migration/migration.component';
 import { InvestmentsComponent } from './components/investments/investments.component';
 import { ChartsModule } from 'ng2-charts';
+import { TimeagoModule } from 'ngx-timeago';
+
+
 export function tokenGetter() {
   return localStorage.getItem("adtoken");
 }
@@ -99,7 +102,8 @@ export function tokenGetter() {
         disallowedRoutes: [],
       },
     }),
-    ChartsModule
+    ChartsModule,
+    TimeagoModule.forRoot()
   ],
   providers: [ ToasterService,
     AuthGuard,
