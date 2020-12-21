@@ -9,14 +9,16 @@ import { FooterComponent } from '../footer/footer.component';
 import { ChartsModule } from 'ng2-charts';
 import { FarmDashboardComponent } from './farm-dashboard/farm-dashboard.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { TimeagoModule } from 'ngx-timeago';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    TimeagoModule,
     AdminRoutingModule,
     ChartsModule
+    
   ],
   declarations: [
       AdminComponent,
@@ -25,8 +27,7 @@ import {TimeAgoPipe} from 'time-ago-pipe';
       FooterComponent,
       DashboardComponent,
       FarmDashboardComponent,
-      NotificationsComponent,
-      TimeAgoPipe
+      NotificationsComponent
   ],
   exports: [AdminComponent]
 })
